@@ -1,0 +1,29 @@
+[project]
+name = "enseignement"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "black>=25.1.0",
+    "graphviz>=0.21",
+    "ipdb>=0.13.13",
+    "isort>=6.0.1",
+    "jupyterlab>=4.4.7",
+    "kneed>=0.8.5",
+    "matplotlib>=3.10.6",
+    "numpy>=2.3.3",
+    "opencv-python>=4.11.0.86",
+    "optuna>=4.5.0",
+    "optuna-dashboard>=0.19.0",
+    "pandas>=2.3.2",
+    "pytest>=8.4.2",
+    "scikit-learn>=1.7.2",
+    "scipy>=1.16.2",
+    "seaborn>=0.13.2",
+    "snakeviz>=2.2.2",
+    "termcolor>=3.1.0",
+    "torch>=2.8.0",
+    "wikipedia>=1.4.0",
+    "yellowbrick>=1.5",
+]

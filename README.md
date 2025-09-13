@@ -6,6 +6,27 @@ The first session starts: September 18th 2025
 
 The second session starts: November 27th 2025
 
+## Python environment
+
+To manage your python environment, several solutions exist.
+
+uv is more modern and should work faster than pip.
+
+A requirements.txt is at the root of the repo.
+
+### uv
+
+This page contains instructions on managing a project
+with uv and installing from requirements.txt.
+
+<https://docs.astral.sh/uv/guides/projects/>
+
+### pip
+
+Classic python package manager.
+
+<https://docs.python.org/dev/installing/index.html>
+
 ## Repo organisation
 
 ### code/
