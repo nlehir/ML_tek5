@@ -1,0 +1,8 @@
+.DS_Store
+*.swp
+*.swo
+*.pyc
+*.DS_Store
+
+*__pycache__/
+*.db
