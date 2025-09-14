@@ -14,7 +14,7 @@ dependencies = [
     "matplotlib>=3.10.6",
     "numpy>=2.3.3",
     "opencv-python>=4.11.0.86",
-    "optuna>=4.5.0",
+    "optuna==3.1.0",
     "optuna-dashboard>=0.19.0",
     "pandas>=2.3.2",
     "pytest>=8.4.2",

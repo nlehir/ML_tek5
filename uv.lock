@@ -295,6 +295,18 @@ wheels = [
 ]
 
 [[package]]
+name = "cmaes"
+version = "0.12.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/5b/4b/9633e72dcd9ac28ab72c661feeb7ece5d01b55e7c9b0ef3331fb102e1506/cmaes-0.12.0.tar.gz", hash = "sha256:6aab41eee2f38bf917560a7e7d1ba0060632cd44cdf7ac2a10704da994624182", size = 52779, upload-time = "2025-07-23T07:01:53.576Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/33/57/f78b7ed51b3536cc80b4322db2cbbb9d1f409736b852eef0493d9fd8474d/cmaes-0.12.0-py3-none-any.whl", hash = "sha256:d0e3e50ce28a36294bffa16a5626c15d23155824cf6b0a373db30dbbea9b2256", size = 64519, upload-time = "2025-07-23T07:01:52.358Z" },
+]
+
+[[package]]
 name = "colorama"
 version = "0.4.6"
 source = { registry = "https://pypi.org/simple" }
@@ -458,7 +470,7 @@ requires-dist = [
     { name = "matplotlib", specifier = ">=3.10.6" },
     { name = "numpy", specifier = ">=2.3.3" },
     { name = "opencv-python", specifier = ">=4.11.0.86" },
-    { name = "optuna", specifier = ">=4.5.0" },
+    { name = "optuna", specifier = "==3.1.0" },
     { name = "optuna-dashboard", specifier = ">=0.19.0" },
     { name = "pandas", specifier = ">=2.3.2" },
     { name = "pytest", specifier = ">=8.4.2" },
@@ -1463,10 +1475,11 @@ wheels = [
 
 [[package]]
 name = "optuna"
-version = "4.5.0"
+version = "3.1.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "alembic" },
+    { name = "cmaes" },
     { name = "colorlog" },
     { name = "numpy" },
     { name = "packaging" },
@@ -1474,9 +1487,9 @@ dependencies = [
     { name = "sqlalchemy" },
     { name = "tqdm" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/53/a3/bcd1e5500de6ec794c085a277e5b624e60b4fac1790681d7cdbde25b93a2/optuna-4.5.0.tar.gz", hash = "sha256:264844da16dad744dea295057d8bc218646129c47567d52c35a201d9f99942ba", size = 472338, upload-time = "2025-08-18T06:49:22.402Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/4b/f7/1f70ebe661c8f3950af6a775a0f3e76d0be99053c5c2cdf6959ecfc2be4a/optuna-3.1.0.tar.gz", hash = "sha256:96c7c92860c8692d3aa569d749e72b121422cb4af0ed3ad4bfbc445b61416919", size = 272621, upload-time = "2023-01-18T05:40:18.157Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/7f/12/cba81286cbaf0f0c3f0473846cfd992cb240bdcea816bf2ef7de8ed0f744/optuna-4.5.0-py3-none-any.whl", hash = "sha256:5b8a783e84e448b0742501bc27195344a28d2c77bd2feef5b558544d954851b0", size = 400872, upload-time = "2025-08-18T06:49:20.697Z" },
+    { url = "https://files.pythonhosted.org/packages/b1/86/41b2fd38e151d1d43b8d3bd5c78081ac213386e67e074856b15a4040c950/optuna-3.1.0-py3-none-any.whl", hash = "sha256:f79e2c2747bbf2779b1ab21de0ff553218159c36695326e8d6f2889db7d5c2a0", size = 365279, upload-time = "2023-01-18T05:40:15.866Z" },
 ]
 
 [[package]]
