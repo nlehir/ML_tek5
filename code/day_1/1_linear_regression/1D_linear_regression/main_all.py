@@ -1,3 +1,8 @@
+"""
+Used to batch over all the main files and several noise
+standard deviations
+"""
+
 import os
 from pprint import pp
 
