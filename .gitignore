@@ -7,6 +7,14 @@
 *__pycache__/
 *.db
 
+.ipynb_checkpoints
+
+code/.ipython/*
+code/.jupyter/*
+code/.local/*
+code/__pycache__/*
+code/.bash_history
+
 code/day_1/1_linear_regression/1D_linear_regression/main_optimal_params_solution.py
 code/day_1/1_linear_regression/1D_linear_regression/utils_solution.py
 code/day_1/1_linear_regression/1D_linear_regression/images/*.pdf
