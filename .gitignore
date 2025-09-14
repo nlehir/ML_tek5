@@ -25,3 +25,7 @@ code/day_1/1_linear_regression/1D_linear_regression/*.pdf
 code/day_1/1_linear_regression/dD_linear_regression/data/*.npy
 code/day_1/1_linear_regression/dD_linear_regression/*.pdf
 code/day_1/1_linear_regression/dD_linear_regression/optuna_ridge_scikit_solution.py
+
+code/day_1/4_metrics/geometric_data/images/*.pdf
+code/day_1/4_metrics/hybrid_data/images/*.pdf
+code/day_1/4_metrics/hybrid_data/images/*_*
