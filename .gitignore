@@ -21,3 +21,7 @@ code/day_1/1_linear_regression/1D_linear_regression/images/*.pdf
 code/day_1/1_linear_regression/1D_linear_regression/images_backup/*.pdf
 code/day_1/1_linear_regression/1D_linear_regression/data/*.npy
 code/day_1/1_linear_regression/1D_linear_regression/*.pdf
+
+code/day_1/1_linear_regression/dD_linear_regression/data/*.npy
+code/day_1/1_linear_regression/dD_linear_regression/*.pdf
+code/day_1/1_linear_regression/dD_linear_regression/optuna_ridge_scikit_solution.py
