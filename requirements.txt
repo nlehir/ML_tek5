@@ -16,6 +16,5 @@ scipy
 seaborn
 snakeviz
 termcolor
-torch
 wikipedia
 yellowbrick
