@@ -18,6 +18,8 @@ code/.bash_history
 code/day_1/1_linear_regression/1D_linear_regression/main_optimal_params_solution.py
 code/day_1/1_linear_regression/1D_linear_regression/utils_solution.py
 code/day_1/1_linear_regression/1D_linear_regression/images/*.pdf
+code/day_1/1_linear_regression/1D_linear_regression/images/polynomial_regression/*.pdf
+code/day_1/1_linear_regression/1D_linear_regression/images/datasets/*.pdf
 code/day_1/1_linear_regression/1D_linear_regression/images_backup/*.pdf
 code/day_1/1_linear_regression/1D_linear_regression/data/*.npy
 code/day_1/1_linear_regression/1D_linear_regression/*.pdf

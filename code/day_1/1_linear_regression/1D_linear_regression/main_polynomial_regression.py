@@ -65,7 +65,7 @@ def fit_polynom(
     plt.tight_layout()
     file_name = f"polyomial_regression_std_{STD_NOISE:.1f}_degree_{degree}"
     file_name = clean_filename(name=file_name)
-    fig_path = os.path.join("images", f"{file_name}.pdf")
+    fig_path = os.path.join("images", "polynomial_regression", f"{file_name}.pdf")
     plt.savefig(fig_path)
     plt.close()
     return train_error, test_error
@@ -104,7 +104,8 @@ def main():
     plt.tight_layout()
     fig_name = f"polynomial_regression_standard_deviation_{STD_NOISE}"
     fig_name = f"{clean_filename(fig_name)}.pdf"
-    plt.savefig(fig_name)
+    fig_path = os.path.join("images", "polynomial_regression", fig_name)
+    plt.savefig(fig_path)
 
 
 if __name__ == "__main__":

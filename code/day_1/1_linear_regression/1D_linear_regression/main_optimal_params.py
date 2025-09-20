@@ -64,9 +64,10 @@ def main():
             )
     plt.title(title)
     plt.tight_layout()
-    file_name = f"optimal_linear_regression_standard_deviation_{STD_NOISE}"
-    file_name = f"{clean_filename(file_name)}.pdf"
-    plt.savefig(file_name)
+    fig_name = f"optimal_linear_regression_standard_deviation_{STD_NOISE}"
+    fig_name = f"{clean_filename(fig_name)}.pdf"
+    fig_path = os.path.join("images", fig_name)
+    plt.savefig(fig_path)
 
 
 if __name__ == "__main__":

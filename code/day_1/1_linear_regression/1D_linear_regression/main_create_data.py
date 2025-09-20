@@ -38,8 +38,10 @@ def main():
             f"\nnoise standard deviation {STD_NOISE:.1f}"
             )
     plt.title(title)
-    file_name = f"dataset_standard_deviation_{STD_NOISE:.1f}"
-    plt.savefig(f"{clean_filename(file_name)}.pdf")
+    fig_name = f"dataset_standard_deviation_{STD_NOISE:.1f}"
+    fig_name = f"{clean_filename(fig_name)}.pdf"
+    fig_path = os.path.join("images", "datasets", fig_name)
+    plt.savefig(fig_path)
     plt.close()
 
     X_train, X_test, y_train, y_test = train_test_split(
@@ -59,8 +61,10 @@ def main():
             )
     plt.title(title)
     plt.legend(loc="best")
-    file_name = f"dataset_standard_deviation_{STD_NOISE:.1f}_splitted"
-    plt.savefig(f"{clean_filename(file_name)}.pdf")
+    fig_name = f"dataset_standard_deviation_{STD_NOISE:.1f}_splitted"
+    fig_name = f"{clean_filename(fig_name)}.pdf"
+    fig_path = os.path.join("images", "datasets", fig_name)
+    plt.savefig(fig_path)
     plt.close()
 
     # save dataset
