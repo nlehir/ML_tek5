@@ -56,17 +56,15 @@ the organisation might evolve a little bit.
 
 * Notion of train and test set, first regression examples
 
-* Technical prerequisites: probabilities, statistics, metrics
-
 * Presentation of the project
 
 ### Day 2
 
 * Classification and logistic regression
 
-* Clustering
+* Technical prerequisites: probabilities, statistics, metrics
 
-* Hyperparameters
+* Clustering
 
 * Dimensionality reduction
 
