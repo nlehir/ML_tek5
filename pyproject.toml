@@ -23,7 +23,6 @@ dependencies = [
     "seaborn>=0.13.2",
     "snakeviz>=2.2.2",
     "termcolor>=3.1.0",
-    "torch>=2.8.0",
     "wikipedia>=1.4.0",
     "yellowbrick>=1.5",
 ]
