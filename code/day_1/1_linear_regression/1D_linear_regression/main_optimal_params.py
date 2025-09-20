@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 from utils import compute_optimal_params, empirical_risk
-from utils_solution import empirical_risk
+# from utils_solution import empirical_risk
 
 from constants import STD_NOISE
 from utils_files import load_data, clean_filename
