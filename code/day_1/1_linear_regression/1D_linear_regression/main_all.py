@@ -12,7 +12,7 @@ def main():
     commands = list()
     for std in STDS:
         command = (
-                "uv run create_data.py "
+                "uv run main_create_data.py "
                 f" --std {std}"
                 )
         commands.append(command)
