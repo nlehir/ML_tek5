@@ -1,7 +1,7 @@
 import os
-from sklearn.datasets import load_digits
-import matplotlib.pyplot as plt
 
+import matplotlib.pyplot as plt
+from sklearn.datasets import load_digits
 
 sample_indexes = [1, 2, 3, 12, 100]
 for sample_index in sample_indexes:

@@ -1,19 +1,20 @@
 """
-    Generate data to illustrate the normalized cut heuristic.
+Generate data to illustrate the normalized cut heuristic.
 
-    The data consist in three 2D clusters, with tunable standard deviations.
+The data consist in three 2D clusters, with tunable standard deviations.
 """
 
 import os
-import numpy as np
+
 import matplotlib.pyplot as plt
+import numpy as np
 from scipy.spatial.distance import cdist
 
 
 def main() -> None:
-    std_1 = 1*0.1
-    std_2 = 1*0.2
-    std_3 = 1*1
+    std_1 = 1 * 0.1
+    std_2 = 1 * 0.2
+    std_3 = 1 * 1
 
     cluster_1 = np.random.normal((1, 4), std_1, (10, 2))
     cluster_2 = np.random.normal((2, 2), std_2, (20, 2))
@@ -26,7 +27,7 @@ def main() -> None:
     nb_points = data.shape[0]
     x = data[:, 0]
     y = data[:, 1]
-    plt.plot(x, y, 'o')
+    plt.plot(x, y, "o")
     plt.title("data to cluster")
     plt.savefig(os.path.join("images", "data_to_cluster.pdf"))
     plt.close()
@@ -34,13 +35,12 @@ def main() -> None:
     # build a matrix of distances
     distances = cdist(XA=data, XB=data)
     # we use the standard deviation to compute the similarity
-    similarity = np.exp(-distances/distances.std())
+    similarity = np.exp(-distances / distances.std())
     print(f"distances standard deviation: {distances.std()}")
     print(similarity)
     plt.imshow(similarity)
     plt.savefig(os.path.join("images", "similarity.pdf"))
     plt.close()
-
 
     # threshold = distances.std()
     selection = np.where(similarity > 0.5)
@@ -54,6 +54,7 @@ def main() -> None:
     np.save(os.path.join("data", "similarity"), similarity)
     np.save(os.path.join("data", "adjacency_matrix"), adjacency_matrix)
     np.save(os.path.join("data", "distances"), distances)
+
 
 if __name__ == "__main__":
     main()

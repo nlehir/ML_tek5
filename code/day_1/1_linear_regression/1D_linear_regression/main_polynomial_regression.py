@@ -3,28 +3,23 @@ Find the optimal parameters for a 1D linear regression
 and plot the prediction made by this estimator.
 """
 
-
 import os
 
 import matplotlib.pyplot as plt
 import numpy as np
-
-from utils_files import clean_filename
-
-from utils import compute_optimal_params, empirical_risk
-from utils_solution import empirical_risk
-
-from utils_files import load_data
 from constants import MEAN_NOISE, STD_NOISE
+from utils import compute_optimal_params, empirical_risk
+from utils_files import clean_filename, load_data
+from utils_solution import empirical_risk
 
 
 def fit_polynom(
-        X_train: np.ndarray,
-        X_test: np.ndarray,
-        y_train: np.ndarray,
-        y_test: np.ndarray,
-        degree: int,
-        ):
+    X_train: np.ndarray,
+    X_test: np.ndarray,
+    y_train: np.ndarray,
+    y_test: np.ndarray,
+    degree: int,
+):
     print(f"fit polynom of degree {degree}")
     """
     Fit a polynom of the degree to the data
@@ -40,9 +35,9 @@ def fit_polynom(
     Compute the train and test error
     """
     n_train = X_train.shape[0]
-    train_error = (np.linalg.norm(train_predictions-y_train)**2)/n_train
+    train_error = (np.linalg.norm(train_predictions - y_train) ** 2) / n_train
     n_test = X_test.shape[0]
-    test_error = (np.linalg.norm(test_predictions-y_test)**2)/n_test
+    test_error = (np.linalg.norm(test_predictions - y_test) ** 2) / n_test
 
     """
     Plot
@@ -55,12 +50,12 @@ def fit_polynom(
     plt.ylabel("power_consumption (MW)")
     plt.legend(loc="best")
     title = (
-            f"Polynomial regression, degree {degree}"
-            "\n(empirical risk minimization)"
-            f"\ntrain error: {train_error:.1f}"
-            f"\ntest error: {test_error:.1f}"
-            f"\nnoise standard deviation: {STD_NOISE:.1f}"
-            )
+        f"Polynomial regression, degree {degree}"
+        "\n(empirical risk minimization)"
+        f"\ntrain error: {train_error:.1f}"
+        f"\ntest error: {test_error:.1f}"
+        f"\nnoise standard deviation: {STD_NOISE:.1f}"
+    )
     plt.title(title)
     plt.tight_layout()
     file_name = f"polyomial_regression_std_{STD_NOISE:.1f}_degree_{degree}"
@@ -80,12 +75,12 @@ def main():
     test_errors = list()
     for degree in degrees:
         train_error, test_error = fit_polynom(
-                X_train=X_train,
-                X_test=X_test,
-                y_train=y_train,
-                y_test=y_test,
-                degree=degree,
-                )
+            X_train=X_train,
+            X_test=X_test,
+            y_train=y_train,
+            y_test=y_test,
+            degree=degree,
+        )
         train_errors.append(train_error)
         test_errors.append(test_error)
 
@@ -96,10 +91,7 @@ def main():
     plt.ylabel("squared error")
     plt.yscale("log")
     plt.legend(loc="best")
-    title = (
-            "Polynomial regression"
-            f"\nnoise standard deviation {STD_NOISE}"
-            )
+    title = f"Polynomial regression\nnoise standard deviation {STD_NOISE}"
     plt.title(title)
     plt.tight_layout()
     fig_name = f"polynomial_regression_standard_deviation_{STD_NOISE}"

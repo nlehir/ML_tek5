@@ -5,10 +5,11 @@ https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticR
 """
 
 import os
-import numpy as np
+
 import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
+import numpy as np
 from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
 
 
 def main():
@@ -28,8 +29,7 @@ def main():
     """
     Split the data into training and test
     """
-    X_train, X_test, y_train, y_test = train_test_split(
-        data, labels, test_size=0.33)
+    X_train, X_test, y_train, y_test = train_test_split(data, labels, test_size=0.33)
 
     """
     Get the dimensions
@@ -46,10 +46,33 @@ def main():
     X_train_2 = X_train[np.where(y_train == 0)[0]]
     X_test_1 = X_test[np.where(y_test == 1)[0]]
     X_test_2 = X_test[np.where(y_test == 0)[0]]
-    plt.plot(X_train_1[:, 0], X_train_1[:, 1], "o", label="class 1 train", alpha=0.5, color="blue")
-    plt.plot(X_test_1[:, 0], X_test_1[:, 1], "o", label="class 1 test", alpha=1, color="blue")
-    plt.plot(X_train_2[:, 0], X_train_2[:, 1], "o", label="class 2 train", alpha=0.5, color="orange")
-    plt.plot(X_test_2[:, 0], X_test_2[:, 1], "o", label="class 2 test", alpha=1, color="orange")
+    plt.plot(
+        X_train_1[:, 0],
+        X_train_1[:, 1],
+        "o",
+        label="class 1 train",
+        alpha=0.5,
+        color="blue",
+    )
+    plt.plot(
+        X_test_1[:, 0], X_test_1[:, 1], "o", label="class 1 test", alpha=1, color="blue"
+    )
+    plt.plot(
+        X_train_2[:, 0],
+        X_train_2[:, 1],
+        "o",
+        label="class 2 train",
+        alpha=0.5,
+        color="orange",
+    )
+    plt.plot(
+        X_test_2[:, 0],
+        X_test_2[:, 1],
+        "o",
+        label="class 2 test",
+        alpha=1,
+        color="orange",
+    )
     plt.title("Train set and test set")
     plt.legend(loc="best")
     plt.savefig("train_test.pdf")
@@ -82,11 +105,12 @@ def main():
     # generate data on the x axis
     xx = np.linspace(min_x_data, max_x_data)
     # compute the y values of the separator
-    yy = [(-b-a_1*x)/a_2 for x in xx]
+    yy = [(-b - a_1 * x) / a_2 for x in xx]
     # plot the separator
     plt.plot(xx, yy, label="separator")
     plt.title("Separation obtained by logistic regression")
     plt.savefig("separation.pdf")
+
 
 if __name__ == "__main__":
     main()

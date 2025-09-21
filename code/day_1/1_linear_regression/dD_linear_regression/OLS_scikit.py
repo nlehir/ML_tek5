@@ -3,7 +3,6 @@ Perform an ordinary least squares regression
 on the toy data
 """
 
-
 import os
 
 import numpy as np

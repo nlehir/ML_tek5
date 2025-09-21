@@ -8,36 +8,26 @@ from pprint import pp
 
 STDS = [0, 1, 10, 20]
 
+
 def main():
     commands = list()
     for std in STDS:
-        command = (
-                "uv run main_create_data.py "
-                f" --std {std}"
-                )
+        command = f"uv run main_create_data.py  --std {std}"
         commands.append(command)
 
-        command = (
-                "uv run main_random_params.py "
-                f" --std {std}"
-                )
+        command = f"uv run main_random_params.py  --std {std}"
         commands.append(command)
 
-        command = (
-                "uv run main_optimal_params_solution.py "
-                f" --std {std}"
-                )
+        command = f"uv run main_optimal_params_solution.py  --std {std}"
         commands.append(command)
 
-        command = (
-                "uv run main_polynomial_regression.py "
-                f" --std {std}"
-                )
+        command = f"uv run main_polynomial_regression.py  --std {std}"
         commands.append(command)
 
     pp(commands)
     for command in commands:
         os.system(command)
+
 
 if __name__ == "__main__":
     main()

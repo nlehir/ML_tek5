@@ -1,11 +1,11 @@
 """
-    Perform the k-means algorithm (unsupervised learning)
+Perform the k-means algorithm (unsupervised learning)
 """
+
 import os
 
 import numpy as np
-
-from utils import plot_clustering, clean
+from utils import clean, plot_clustering
 
 IMAGES_FOLDER = "images"
 
@@ -22,7 +22,6 @@ def cluster_dataset(nbs_of_iterations: int) -> None:
     y = data[:, 1]
 
     nb_samples = len(x)
-
 
     # we dont initialize the centroids completely randomly
     x_min = min(x)
@@ -58,7 +57,6 @@ def cluster_dataset(nbs_of_iterations: int) -> None:
         """
         Vectorized version
         """
-
 
         """
         Assign each sample to a cluster

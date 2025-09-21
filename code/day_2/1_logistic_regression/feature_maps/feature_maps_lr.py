@@ -1,9 +1,10 @@
 """
 Perform logistic regression on the tranformed data
 """
+
 import numpy as np
-from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
 from utils_files import load_data
 
 

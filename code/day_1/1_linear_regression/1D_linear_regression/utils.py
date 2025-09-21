@@ -2,16 +2,15 @@
 Utility functions for 1d linear regression
 """
 
-
 import numpy as np
 
 
 def empirical_risk(
-        theta: float,
-        b: float,
-        X: np.ndarray,
-        y: np.ndarray,
-        ) -> float:
+    theta: float,
+    b: float,
+    X: np.ndarray,
+    y: np.ndarray,
+) -> float:
     """
     Compute the empirical risk of a set of parameters
     for a linear prediction, in 1 dimension.

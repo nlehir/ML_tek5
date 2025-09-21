@@ -1,5 +1,5 @@
 """
-    Exercise illustrating hierarchical clustering.
+Exercise illustrating hierarchical clustering.
 """
 
 import csv
@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import scipy.spatial
 from hierarchical_clustering import find_closest_classes
+
 # from hierarchical_clustering_solution import find_closest_classes
 from sklearn import metrics
 
@@ -42,7 +43,7 @@ classes = [[i] for i in range(nb_datapoints)]
 
 
 def get_label(sample: int, classes: list[list]) -> int:
-    for (class_id, class_content) in enumerate(classes):
+    for class_id, class_content in enumerate(classes):
         if sample in class_content:
             return class_id
 

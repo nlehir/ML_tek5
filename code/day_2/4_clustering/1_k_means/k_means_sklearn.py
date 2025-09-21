@@ -1,7 +1,8 @@
 """
-    Perform the k-means algorithm on toy data using scikit-learn
-    https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html
+Perform the k-means algorithm on toy data using scikit-learn
+https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html
 """
+
 import os
 
 import matplotlib.pyplot as plt

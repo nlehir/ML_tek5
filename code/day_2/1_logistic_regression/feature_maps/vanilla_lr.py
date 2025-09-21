@@ -1,8 +1,9 @@
 import os
-import numpy as np
+
 import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
+import numpy as np
 from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
 from utils_files import load_data
 
 
@@ -24,10 +25,38 @@ def main():
     X_train_1 = X_train[np.where(y_train == 1)[0]]
     X_test_0 = X_test[np.where(y_test == 0)[0]]
     X_test_1 = X_test[np.where(y_test == 1)[0]]
-    plt.plot(X_train_0[:, 0], X_train_0[:, 1], "o", label="class 0 train", alpha=0.5, color="skyblue")
-    plt.plot(X_test_0[:, 0], X_test_0[:, 1], "o", label="class 0 test", alpha=1, color="skyblue")
-    plt.plot(X_train_1[:, 0], X_train_1[:, 1], "o", label="class 1 train", alpha=0.5, color="mediumblue")
-    plt.plot(X_test_1[:, 0], X_test_1[:, 1], "o", label="class 1 test", alpha=1, color="mediumblue")
+    plt.plot(
+        X_train_0[:, 0],
+        X_train_0[:, 1],
+        "o",
+        label="class 0 train",
+        alpha=0.5,
+        color="skyblue",
+    )
+    plt.plot(
+        X_test_0[:, 0],
+        X_test_0[:, 1],
+        "o",
+        label="class 0 test",
+        alpha=1,
+        color="skyblue",
+    )
+    plt.plot(
+        X_train_1[:, 0],
+        X_train_1[:, 1],
+        "o",
+        label="class 1 train",
+        alpha=0.5,
+        color="mediumblue",
+    )
+    plt.plot(
+        X_test_1[:, 0],
+        X_test_1[:, 1],
+        "o",
+        label="class 1 test",
+        alpha=1,
+        color="mediumblue",
+    )
     plt.title("Train set and test set")
     plt.legend(loc="best")
 
@@ -42,14 +71,14 @@ def main():
     # generate data on the x axis
     xx = np.linspace(min_x_data, max_x_data)
     # compute the y values of the separator
-    yy = (-b-a_1*xx)/a_2
+    yy = (-b - a_1 * xx) / a_2
     # plot the separator
     plt.plot(xx, yy, label="separator")
     title = (
-            "Separation obtained by raw logistic regression"
-            f"\ntrain accuracy: {clf.score(X_train, y_train):.4f}"
-            f"\ntest accuracy: {clf.score(X_test, y_test):.4f}"
-            )
+        "Separation obtained by raw logistic regression"
+        f"\ntrain accuracy: {clf.score(X_train, y_train):.4f}"
+        f"\ntest accuracy: {clf.score(X_test, y_test):.4f}"
+    )
     plt.title(title)
     plt.tight_layout()
     plt.savefig(os.path.join("images", "vanilla_lr.pdf"))

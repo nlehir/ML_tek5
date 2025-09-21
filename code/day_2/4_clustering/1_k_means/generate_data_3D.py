@@ -1,5 +1,5 @@
 """
-    Generate the data used in the kmeans exercise
+Generate the data used in the kmeans exercise
 """
 
 import os

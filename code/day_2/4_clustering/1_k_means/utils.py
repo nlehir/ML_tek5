@@ -1,9 +1,10 @@
-import matplotlib.pyplot as plt
 import os
+
+import matplotlib.pyplot as plt
 import numpy as np
 
-
 IMAGES_FOLDER = "images"
+
 
 def plot_clustering(
     iteration: int,

@@ -3,11 +3,11 @@ Read data from a csv
 """
 
 import csv
+import os
 
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.stats import pearsonr
-import os
 
 # open file
 file_name = os.path.join("csv_files", "distribution_3.csv")
@@ -46,7 +46,7 @@ l = [(i, j) for i in range(0, 5) for j in range(0, 5)]
 
 correlation_matrix = np.zeros((5, 5))
 
-for (i, j) in l:
+for i, j in l:
     correlation_matrix[i][j] = pearsonr(data[i], data[j])[0]
 
 im = plt.imshow(correlation_matrix, vmin=-1, vmax=1)

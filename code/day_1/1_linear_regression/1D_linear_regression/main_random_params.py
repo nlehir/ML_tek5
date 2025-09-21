@@ -7,11 +7,11 @@ import os
 
 import numpy as np
 
-from utils import empirical_risk
 # from utils_solution import empirical_risk
-
 from constants import STD_NOISE
+from utils import empirical_risk
 from utils_files import load_data
+
 
 def main() -> None:
     n_tests = 100
@@ -28,11 +28,11 @@ def main() -> None:
         theta = rng.uniform(-100, 100)
         b = rng.uniform(-100, 100)
         train_error = empirical_risk(
-                theta=theta,
-                b=b,
-                X=X_train,
-                y=y_train,
-                )
+            theta=theta,
+            b=b,
+            X=X_train,
+            y=y_train,
+        )
         if train_error < best_train_error:
             best_train_error = train_error
             best_theta = theta
@@ -44,11 +44,11 @@ def main() -> None:
             f"\nempirical risk:   {train_error:.2E}\n"
         )
     test_error = empirical_risk(
-            theta=best_theta,
-            b=best_b,
-            X=X_test,
-            y=y_test,
-            )
+        theta=best_theta,
+        b=best_b,
+        X=X_test,
+        y=y_test,
+    )
     print(
         "\n--------"
         f"\nbest theta:          {best_theta:.2f}"

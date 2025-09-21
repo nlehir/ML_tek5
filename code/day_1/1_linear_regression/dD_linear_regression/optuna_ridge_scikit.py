@@ -22,7 +22,7 @@ def objective(trial):
     """
     Objective function:
         Generate a set of hyperparameters, fit a ridge regressor
-        on the train set using this set of parameters, and return the 
+        on the train set using this set of parameters, and return the
         r2 score on the test set.
 
         Note that using only a train / test dataset splitting strategy is not
@@ -40,6 +40,7 @@ def objective(trial):
     https://optuna.org/
     """
     return 1
+
 
 def main():
     # database for the optuna dashboard

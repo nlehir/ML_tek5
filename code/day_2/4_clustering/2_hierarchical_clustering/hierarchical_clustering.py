@@ -1,5 +1,5 @@
 """
-    Exercise illustrating hierarchical clustering.
+Exercise illustrating hierarchical clustering.
 """
 
 import csv

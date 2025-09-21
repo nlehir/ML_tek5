@@ -1,11 +1,12 @@
 """
-    Draw the graph
+Draw the graph
 """
 
 from graphviz import Graph
 
+
 def main() -> None:
-    dot = Graph(comment='Graph used to study Spectral Clustering')
+    dot = Graph(comment="Graph used to study Spectral Clustering")
 
     dot.edge("1", "2", color="aquamarine4")
     dot.edge("0", "2", color="aquamarine4")
@@ -31,6 +32,7 @@ def main() -> None:
     # visualize the graph
     graph_name = "images/graph_to_cluster"
     dot.render(graph_name)
+
 
 if __name__ == "__main__":
     main()
