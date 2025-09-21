@@ -15,9 +15,9 @@ code/.local/*
 code/__pycache__/*
 code/.bash_history
 
+code/**/*solution*
+
 # Day 1
-code/day_1/1_linear_regression/1D_linear_regression/main_optimal_params_solution.py
-code/day_1/1_linear_regression/1D_linear_regression/utils_solution.py
 code/day_1/1_linear_regression/1D_linear_regression/images/*.pdf
 code/day_1/1_linear_regression/1D_linear_regression/images/polynomial_regression/*.pdf
 code/day_1/1_linear_regression/1D_linear_regression/images/datasets/*.pdf
@@ -27,16 +27,16 @@ code/day_1/1_linear_regression/1D_linear_regression/*.pdf
 
 code/day_1/1_linear_regression/dD_linear_regression/data/*.npy
 code/day_1/1_linear_regression/dD_linear_regression/*.pdf
-code/day_1/1_linear_regression/dD_linear_regression/optuna_ridge_scikit_solution.py
-
 
 # Day 2
 code/day_2/1_logistic_regression/digits_dataset/images/*.pdf
-code/day_2/1_logistic_regression/digits_dataset/logistic_regression_digits_solution.py
 
 code/day_2/1_logistic_regression/feature_maps/images/*.pdf
-code/day_2/1_logistic_regression/feature_maps/feature_maps_lr_solution.py
 
 code/day_2/3_metrics/geometric_data/images/*.pdf
 code/day_2/3_metrics/hybrid_data/images/*.pdf
 code/day_2/3_metrics/hybrid_data/images/*_*
+
+code/day_2/4_clustering/1_k_means/images/*.pdf
+code/day_2/4_clustering/2_hierarchical_clustering/clusterings/*.pdf
+code/day_2/4_clustering/2_hierarchical_clustering/images/*.pdf
