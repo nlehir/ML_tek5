@@ -31,3 +31,8 @@ code/day_1/1_linear_regression/dD_linear_regression/optuna_ridge_scikit_solution
 code/day_1/4_metrics/geometric_data/images/*.pdf
 code/day_1/4_metrics/hybrid_data/images/*.pdf
 code/day_1/4_metrics/hybrid_data/images/*_*
+
+code/day_2/1_logistic_regression/digits_dataset/images/*.pdf
+code/day_2/1_logistic_regression/digits_dataset/logistic_regression_digits_solution.py
+code/day_2/1_logistic_regression/feature_maps/images/*.pdf
+code/day_2/1_logistic_regression/feature_maps/feature_maps_lr_solution.py
