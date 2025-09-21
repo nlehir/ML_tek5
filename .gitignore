@@ -15,6 +15,7 @@ code/.local/*
 code/__pycache__/*
 code/.bash_history
 
+# Day 1
 code/day_1/1_linear_regression/1D_linear_regression/main_optimal_params_solution.py
 code/day_1/1_linear_regression/1D_linear_regression/utils_solution.py
 code/day_1/1_linear_regression/1D_linear_regression/images/*.pdf
@@ -28,11 +29,14 @@ code/day_1/1_linear_regression/dD_linear_regression/data/*.npy
 code/day_1/1_linear_regression/dD_linear_regression/*.pdf
 code/day_1/1_linear_regression/dD_linear_regression/optuna_ridge_scikit_solution.py
 
-code/day_1/4_metrics/geometric_data/images/*.pdf
-code/day_1/4_metrics/hybrid_data/images/*.pdf
-code/day_1/4_metrics/hybrid_data/images/*_*
 
+# Day 2
 code/day_2/1_logistic_regression/digits_dataset/images/*.pdf
 code/day_2/1_logistic_regression/digits_dataset/logistic_regression_digits_solution.py
+
 code/day_2/1_logistic_regression/feature_maps/images/*.pdf
 code/day_2/1_logistic_regression/feature_maps/feature_maps_lr_solution.py
+
+code/day_2/3_metrics/geometric_data/images/*.pdf
+code/day_2/3_metrics/hybrid_data/images/*.pdf
+code/day_2/3_metrics/hybrid_data/images/*_*
