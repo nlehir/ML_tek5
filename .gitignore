@@ -40,3 +40,11 @@ code/day_2/3_metrics/hybrid_data/images/*_*
 code/day_2/4_clustering/1_k_means/images/*.pdf
 code/day_2/4_clustering/2_hierarchical_clustering/clusterings/*.pdf
 code/day_2/4_clustering/2_hierarchical_clustering/images/*.pdf
+
+# Day 3
+code/day_3/1_gradients/1d_function/*.pdf
+code/day_3/1_gradients/function_1/*.pdf
+code/day_3/1_gradients/function_2/*.pdf
+code/day_3/2_neural_networks/mnist/data/*.npy
+code/day_3/2_neural_networks/mnist/images/*.pdf
+code/day_3/2_neural_networks/toy_data_numpy/images/*.pdf

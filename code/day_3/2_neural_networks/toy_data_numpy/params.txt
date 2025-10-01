@@ -1,0 +1,27 @@
+convergence
+---
+hidden_dim = 6
+Learning_rate = 1e−6
+Nb_steps = 40000
+Nb_plotted_steps = 100
+
+bad local min
+---
+hidden_dim = 3
+
+explosion
+---
+learning_rate = 1e-3
+
+oscillation
+---
+hidden_dim = 2
+learning_rate = 1e-4
+
+overfit
+---
+hidden dim 100
+nb iterations 20000
+nb plotted steps 200
+lr 1e-6
+noise std 1
