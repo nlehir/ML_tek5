@@ -66,8 +66,6 @@ the organisation might evolve a little bit.
 
 * Clustering
 
-* Dimensionality reduction
-
 * Validation of the datasets chosen by the students for the project
 
 ### Day 3
@@ -83,6 +81,8 @@ the organisation might evolve a little bit.
 * Project follow-up
 
 ### Day 4
+
+* Dimensionality reduction
 
 * Reinforcement learning
 
