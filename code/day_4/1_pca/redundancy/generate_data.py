@@ -1,6 +1,6 @@
 """
-    Principal Component Analysis
-    generate redundant data
+Principal Component Analysis
+generate redundant data
 """
 
 import numpy as np

@@ -1,8 +1,8 @@
 """
-    genrate the dataset for an underparametrized problem
-    (no estimator in the considered class interpolates the data)
+genrate the dataset for an underparametrized problem
+(no estimator in the considered class interpolates the data)
 
-    In this case adding a random noise to the output enforces this.
+In this case adding a random noise to the output enforces this.
 
 """
 

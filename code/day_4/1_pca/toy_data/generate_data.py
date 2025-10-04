@@ -1,12 +1,11 @@
 """
-    generate toy data
-    for exercises on
-    Principal Component Analysis
+generate toy data
+for exercises on
+Principal Component Analysis
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
-
+import numpy as np
 
 nb_points = 100
 x_data = np.random.normal(4, 1, nb_points)

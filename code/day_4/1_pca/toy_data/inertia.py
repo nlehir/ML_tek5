@@ -1,10 +1,12 @@
 """
-    compute the inertia
-    of a dataset related to a given axis
+compute the inertia
+of a dataset related to a given axis
 """
+
 import os
-import numpy as np
+
 import matplotlib.pyplot as plt
+import numpy as np
 from orthogonal_projection import orthogonal_projection
 
 
@@ -64,7 +66,6 @@ def test_axis(axis: np.ndarray, data: np.ndarray):
         add lines here
         """
 
-
         # plot the projection
         plt.plot(
             [vector[0], projected_vector[0]],
@@ -85,9 +86,9 @@ def test_axis(axis: np.ndarray, data: np.ndarray):
     plt.tight_layout()
     fig_name = f"projection axis=({axis[0]:.2f}, {axis[1]:.2f}).pdf"
     fig_path = os.path.join(
-            "images",
-            fig_name,
-            )
+        "images",
+        fig_name,
+    )
     plt.savefig(fig_path)
     plt.close()
 
@@ -99,24 +100,25 @@ def main() -> None:
     plt.plot(data[0], data[1], "o", color="olivedrab", markersize="3")
     fig_name = "centered_data"
     fig_path = os.path.join(
-            "images",
-            fig_name,
-            )
+        "images",
+        fig_name,
+    )
     plt.savefig(fig_path)
     plt.close()
 
     # choose axes and compute the inertia
     axes = [
-            np.array([3, 1]), # 13.738884834780901
-            np.array([1, -2]), # 0.9403642151086317
-            np.array([0.1, -2]), # 0.7420155853224581
-            np.array([-2.5, 8]), # 0.3207911064347376
-            ]
+        np.array([3, 1]),  # 13.738884834780901
+        np.array([1, -2]),  # 0.9403642151086317
+        np.array([0.1, -2]),  # 0.7420155853224581
+        np.array([-2.5, 8]),  # 0.3207911064347376
+    ]
     for axis in axes:
         test_axis(
             axis=axis,
             data=data,
         )
+
 
 if __name__ == "__main__":
     main()

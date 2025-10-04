@@ -2,20 +2,20 @@
 Use a previously trained model
 """
 
+import os
 
 import matplotlib.pyplot as plt
-import os
 import numpy as np
-from keras.models import load_model
 from keras.activations import *
+from keras.models import load_model
 
 
 def predict_test_point(
-        data_index: int,
-        x_test: np.ndarray,
-        y_test: np.ndarray,
-        loaded_model,
-        ) -> None:
+    data_index: int,
+    x_test: np.ndarray,
+    y_test: np.ndarray,
+    loaded_model,
+) -> None:
     """
     test if the model predicts
     the correct class
@@ -47,6 +47,7 @@ def predict_test_point(
         plt.savefig(os.path.join("images", f"prediction_{data_index}.pdf"))
         plt.close()
 
+
 def main() -> None:
     y_test = np.load("data/y_test.npy")
     x_test = np.load("data/x_test.npy")
@@ -55,19 +56,18 @@ def main() -> None:
     loaded_model = load_model("trained_model.keras")
 
     loaded_model.compile(
-        optimizer="adam",
-        loss="sparse_categorical_crossentropy",
-        metrics=["accuracy"]
+        optimizer="adam", loss="sparse_categorical_crossentropy", metrics=["accuracy"]
     )
 
     samples_to_test = np.arange(1, 1000)
     for sample_id in samples_to_test:
         predict_test_point(
-                data_index=sample_id,
-                x_test=x_test,
-                y_test=y_test,
-                loaded_model=loaded_model,
-                )
+            data_index=sample_id,
+            x_test=x_test,
+            y_test=y_test,
+            loaded_model=loaded_model,
+        )
+
 
 if __name__ == "__main__":
     main()

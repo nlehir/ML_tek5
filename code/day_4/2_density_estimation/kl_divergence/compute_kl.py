@@ -3,10 +3,9 @@ Using the KL divergenve, choose the best model to fit the data
 """
 
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas
 from scipy.stats import entropy
-import numpy as np
-
 
 
 def compute_kl_divergence(mean, std, data, bins):
@@ -41,23 +40,21 @@ def compute_kl_divergence(mean, std, data, bins):
     # (see the scipy doc)
     kl_divergence = entropy(model_hist, data_hist)
 
-    plt.annotate(f"KL={kl_divergence:.3f}",
-                 (50, 50),
-                 fontsize=(14))
+    plt.annotate(f"KL={kl_divergence:.3f}", (50, 50), fontsize=(14))
     title = f"model mean : {mean}, model std : {std}"
     plt.title(title)
     print(title)
     print(f"KL divergence: {kl_divergence:.4f}\n")
     plt.legend(loc="best")
-    plt.xlabel('age (years)')
-    plt.ylabel('nb of occurrences')
+    plt.xlabel("age (years)")
+    plt.ylabel("nb of occurrences")
     plt.savefig(f"images/model_hist_mean_{mean}_std_{std}.pdf")
     plt.close()
 
 
 def main() -> None:
     # open file
-    file_name = 'empirical_distribution.csv'
+    file_name = "empirical_distribution.csv"
 
     df = pandas.read_csv(file_name)
     data = df["age"].values
@@ -69,8 +66,8 @@ def main() -> None:
     _, bins, _ = plt.hist(data, bins=NBINS)
     title = f"empirical distribution : histogram, {NBINS} bins"
     plt.title(title)
-    plt.xlabel('age (years)')
-    plt.ylabel('number of occurrences')
+    plt.xlabel("age (years)")
+    plt.ylabel("number of occurrences")
     plt.savefig(f"images/empirical_hist_{NBINS}_bins.pdf")
     plt.close()
 

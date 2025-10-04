@@ -3,6 +3,7 @@ Perform gradient descent on a simple function
 """
 
 import os
+
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -27,6 +28,7 @@ def ygradient(x: float, y: float) -> float:
     compute the y coordinate of the gradient
     """
     return 4 * y**3 + 8 * y
+
 
 def main() -> None:
     for image in os.listdir("function_1/"):
@@ -68,6 +70,7 @@ def main() -> None:
             ax.scatter(x_iter, y_iter, z, marker="x", color="red")
             plt.savefig(f"function_1/{iteration}.pdf")
         print(f"x : {x_iter:.2f}, y : {y_iter:.2f}, f(x,y) : {z:.2f}")
+
 
 if __name__ == "__main__":
     main()

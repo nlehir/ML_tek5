@@ -1,4 +1,6 @@
-def sparsity_scorer(clf: LogisticRegression | Pipeline, X=None, y=None, scale_coef=1.0) -> float:
+def sparsity_scorer(
+    clf: LogisticRegression | Pipeline, X=None, y=None, scale_coef=1.0
+) -> float:
     """
     Evaluates the sparsity of the estimator within a pipeline
     Can work with a LogisticRegression or a pipeline containing

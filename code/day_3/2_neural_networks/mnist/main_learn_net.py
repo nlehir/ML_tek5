@@ -5,6 +5,7 @@ MNIST problem
 # adapted from this tutorial
 # https://towardsdatascience.com/image-classification-in-10-minutes-with-mnist-dataset-54c35b77a38d
 """
+
 import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
@@ -81,17 +82,18 @@ def main() -> None:
     )
 
     model.fit(
-            x=x_train,
-            y=y_train,
-            batch_size=32,
-            epochs=10,
-            )
+        x=x_train,
+        y=y_train,
+        batch_size=32,
+        epochs=10,
+    )
 
     # Evaluate the model
     print("\nevaluate the model")
     model.evaluate(x_test, y_test)
 
     model.save("trained_model.keras")
+
 
 if __name__ == "__main__":
     main()

@@ -2,16 +2,17 @@
 Perform gradient descent on a non convex function
 """
 
+import math
 import os
-from mpl_toolkits.mplot3d import axes3d
+
 import matplotlib.pyplot as plt
 import numpy as np
-import math
+from mpl_toolkits.mplot3d import axes3d
 
 
 def function_to_minimize(x: float, y: float) -> float:
     """
-    simple non convex function that is 
+    simple non convex function that is
     to be minimized by gradient descent
     """
     return (
@@ -44,11 +45,11 @@ def ygradient(x: float, y: float) -> float:
         + 200 * math.exp(-((x + 9) ** 2 + (y + 11) ** 2) / 10) * (2 / 10) * (y + 11)
     )
 
+
 def main() -> None:
     # clean folder that contains the images
     for image in os.listdir("function_2/"):
         os.remove(os.path.join("function_2", image))
-
 
     # plot the function to minimize
     fig = plt.figure()
@@ -95,7 +96,9 @@ def main() -> None:
                 z_iter_store.append(z)
                 ax.plot(x_iter_store, y_iter_store, z_iter_store, color="darkred")
                 plt.savefig(f"function_2/{iteration}.pdf")
-                print(f"it {iteration}, x : {x_iter:.2f} y : {y_iter:.2f}  value : {z:.2f}")
+                print(
+                    f"it {iteration}, x : {x_iter:.2f} y : {y_iter:.2f}  value : {z:.2f}"
+                )
         elif iteration < 35000:
             if iteration % 100 == 0:
                 x_iter_store.append(x_iter)
@@ -103,7 +106,9 @@ def main() -> None:
                 z_iter_store.append(z)
                 ax.plot(x_iter_store, y_iter_store, z_iter_store, color="darkred")
                 plt.savefig(f"function_2/{iteration}.pdf")
-                print(f"it {iteration}, x : {x_iter:.2f} y : {y_iter:.2f}  value : {z:.2f}")
+                print(
+                    f"it {iteration}, x : {x_iter:.2f} y : {y_iter:.2f}  value : {z:.2f}"
+                )
         else:
             if iteration % 50 == 0:
                 x_iter_store.append(x_iter)
@@ -112,12 +117,11 @@ def main() -> None:
                 ax.plot(x_iter_store, y_iter_store, z_iter_store, color="darkred")
                 plt.savefig(f"function_2/{iteration}.pdf")
                 text = (
-                    f"it {iteration}"
-                    f", x : {x_iter:.2f} y : {y_iter:.2f}"
-                    f"value : {z:.2f}"
-                    )
+                    f"it {iteration}, x : {x_iter:.2f} y : {y_iter:.2f}value : {z:.2f}"
+                )
 
                 print(text)
+
 
 if __name__ == "__main__":
     main()

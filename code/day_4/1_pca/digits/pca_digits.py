@@ -1,6 +1,7 @@
-from sklearn.datasets import load_digits
 import os
+
 import matplotlib.pyplot as plt
+from sklearn.datasets import load_digits
 from sklearn.decomposition import PCA
 
 
@@ -27,11 +28,11 @@ def main() -> None:
         cmap=plt.cm.get_cmap("jet", 10),
     )
     title = (
-            "Digits projected on 2 dimensions"
-            " after PCA\n"
-            "the colors correspond to the labels"
-            " but are not used by the PCA"
-            )
+        "Digits projected on 2 dimensions"
+        " after PCA\n"
+        "the colors correspond to the labels"
+        " but are not used by the PCA"
+    )
     plt.title(title, fontsize=9)
     plt.xlabel("component 1")
     plt.ylabel("component 2")
@@ -40,6 +41,7 @@ def main() -> None:
     fig_name = "projected_digits.pdf"
     fig_path = os.path.join("images", fig_name)
     plt.savefig(fig_path)
+
 
 if __name__ == "__main__":
     main()

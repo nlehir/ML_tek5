@@ -1,6 +1,7 @@
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 from sklearn.decomposition import PCA
+
 
 def main():
     redudant_data = np.load("redundant_data.npy")
@@ -15,6 +16,7 @@ def main():
     plt.xlabel("number of components")
     plt.ylabel("cumulative explained variance")
     plt.savefig("explained_variance_redundancy.pdf")
+
 
 if __name__ == "__main__":
     main()

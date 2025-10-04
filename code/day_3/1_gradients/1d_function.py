@@ -1,21 +1,22 @@
 import os
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
 X_START = 10
 GAMMA = 0.01
 N_ITER = int(2e2)
 
+
 def func(x):
-    return (x-1)**2 +3.5
+    return (x - 1) ** 2 + 3.5
+
 
 def func_derivative(x):
-    return 2 * (x-1)
+    return 2 * (x - 1)
 
 
 def main() -> None:
-
     min_x = X_START
     max_x = X_START
 
@@ -26,7 +27,7 @@ def main() -> None:
         print(f"\niteration: {it}")
         y = func(x)
         # plot the current iterate
-        plt.annotate(text=f"{it}", xy=(x,y), bbox=bbox)
+        plt.annotate(text=f"{it}", xy=(x, y), bbox=bbox)
         # gradient update
         x = x - GAMMA * func_derivative(x)
         print(f"x: {x}")
@@ -37,7 +38,6 @@ def main() -> None:
             max_x = x
         if x < min_x:
             min_x = x
-
 
     # plot a little wider
     min_x -= 2
@@ -51,11 +51,7 @@ def main() -> None:
     plt.xlabel("x")
     plt.ylabel("y")
     plt.legend(loc="best")
-    title=(
-            f"gradient descent"
-            f"\ngamma={GAMMA}"
-            f"\nx_0={X_START}"
-            )
+    title = f"gradient descent\ngamma={GAMMA}\nx_0={X_START}"
     plt.title(title)
     figpath = os.path.join("1d_function", f"gd_gamma_{GAMMA}_x0_{X_START:.1E}.pdf")
     plt.savefig(figpath)

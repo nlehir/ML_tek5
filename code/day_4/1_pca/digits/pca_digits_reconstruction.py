@@ -1,16 +1,18 @@
 """
-    adapted from
-    https://jakevdp.github.io/PythonDataScienceHandbook/05.09-principal-component-analysis.html
+adapted from
+https://jakevdp.github.io/PythonDataScienceHandbook/05.09-principal-component-analysis.html
 
-    # TODO: improve <01-12-22, nlehir> #
+# TODO: improve <01-12-22, nlehir> #
 """
+
 import os
+
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
 from pandas import core
 from sklearn.datasets import load_digits
-import seaborn as sns
-import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
-import numpy as np
 
 
 def reconstruct_sample(
@@ -58,7 +60,7 @@ def reconstruct_sample(
             i=1,
             j=i + 3,
             x=reconstruction,
-            title=f"{coefficients[i]:.2f} . c_{i+1}",
+            title=f"{coefficients[i]:.2f} . c_{i + 1}",
             fontsize=FONTSIZE_SMALL,
         )
         plt.gca().text(
@@ -93,7 +95,11 @@ def process_sample(
         components=pca.components_,
         n_components=nb_components,
     )
-    figpath = os.path.join("images", "reconstruction", f"sample_{data_index}_{nb_components}_components.pdf")
+    figpath = os.path.join(
+        "images",
+        "reconstruction",
+        f"sample_{data_index}_{nb_components}_components.pdf",
+    )
     plt.savefig(figpath)
 
 

@@ -1,13 +1,14 @@
 """
 In this script a neural network tries to fit some manually generated data
 """
+
 # import plot_net
 import os
 
 import matplotlib.pyplot as plt
 import numpy as np
-from utils import mean_squared_error, nn_r2
 from sklearn.metrics import r2_score
+from utils import mean_squared_error, nn_r2
 
 # Hyperparameters
 HIDDEN_DIM = 3
@@ -32,7 +33,6 @@ def train_neural_net(
     # get problem dimensions
     input_dim = x_train.shape[1]
     output_dim = y_train.shape[1]
-
 
     # Randomly initialize weights
     rng = np.random.default_rng()
@@ -78,17 +78,17 @@ def train_neural_net(
             iterations.append(iteration)
 
             plt.plot(
-                    R2_train_list,
-                    "o",
-                    alpha=0.5,
-                    color="blue",
-                    )
+                R2_train_list,
+                "o",
+                alpha=0.5,
+                color="blue",
+            )
             plt.plot(
-                    R2_test_list,
-                    "o",
-                    alpha=0.5,
-                    color="orange",
-                    )
+                R2_test_list,
+                "o",
+                alpha=0.5,
+                color="orange",
+            )
             # plt.yscale("log")
 
             # set the limits of the plots
@@ -99,7 +99,7 @@ def train_neural_net(
                 f"train R2: {R2_train_list[-1]:.3f}\n"
                 f"test R2: {R2_test_list[-1]:.3f}\n"
                 f"learning rate: {LEARNING_RATE}"
-                    )
+            )
             plt.title(title)
             plt.xlabel("iteration")
             plt.ylabel("R2")
@@ -123,17 +123,17 @@ def train_neural_net(
 
     # save the plot of the loss function
     final_train_R2 = nn_r2(
-            x=x_train,
-            y=y_train,
-            w1=w1,
-            w2=w2,
-            )
+        x=x_train,
+        y=y_train,
+        w1=w1,
+        w2=w2,
+    )
     final_test_R2 = nn_r2(
-            x=x_test,
-            y=y_test,
-            w1=w1,
-            w2=w2,
-            )
+        x=x_test,
+        y=y_test,
+        w1=w1,
+        w2=w2,
+    )
     plt.close()
 
     """
@@ -148,7 +148,7 @@ def train_neural_net(
         f"Final train R2 {final_train_R2:.3f}\n"
         f"Final test R2 {final_test_R2:.3f}\n"
         f"learning rate: {LEARNING_RATE}"
-            )
+    )
     plt.title(title)
     plt.xlabel("iteration")
     plt.ylabel("Train R2")
@@ -161,7 +161,6 @@ def train_neural_net(
     plt.show()
     plt.close("all")
 
-
     """
     Plot MSE learning curve
     """
@@ -172,7 +171,7 @@ def train_neural_net(
         f"{HIDDEN_DIM} hidden neurons\n"
         f"noise std: {NOISE_STD_DEV:.3f}\n"
         f"learning rate: {LEARNING_RATE}"
-            )
+    )
     plt.title(title)
     plt.xlabel("iteration")
     plt.ylabel("Mean squared error")

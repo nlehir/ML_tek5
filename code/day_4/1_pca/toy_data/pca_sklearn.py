@@ -1,10 +1,13 @@
 """
-    perform PCA using sklearn
+perform PCA using sklearn
 """
+
 import os
-import numpy as np
+
 import matplotlib.pyplot as plt
+import numpy as np
 from sklearn.decomposition import PCA
+
 
 def main() -> None:
     # load and center the data
@@ -23,6 +26,7 @@ def main() -> None:
 
     # variance ratio carried by those axes
     print(f"\nexplained variance ratio {pca.explained_variance_ratio_}")
+
 
 if __name__ == "__main__":
     main()
