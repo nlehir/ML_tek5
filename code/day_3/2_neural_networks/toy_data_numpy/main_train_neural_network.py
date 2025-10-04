@@ -103,7 +103,6 @@ def train_neural_net(
             plt.title(title)
             plt.xlabel("iteration")
             plt.ylabel("R2")
-            plt.legend(loc="best")
             plt.tight_layout()
             plt.draw()
             plt.pause(0.01)
