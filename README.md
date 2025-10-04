@@ -76,15 +76,13 @@ the organisation might evolve a little bit.
 
 * Scoring
 
-* Density estimation
-
 * Project follow-up
 
 ### Day 4
 
 * Dimensionality reduction
 
-* Reinforcement learning
+* Density estimation
 
 * Feature selection
 
@@ -93,6 +91,8 @@ the organisation might evolve a little bit.
 ### Day 5
 
 * Classification and regression trees, ensemble methods
+
+* Reinforcement learning
 
 * Some results on statistical learning and more modern topics
 
