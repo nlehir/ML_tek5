@@ -9,6 +9,8 @@
 
 .ipynb_checkpoints
 
+format.sh
+
 code/.ipython/*
 code/.jupyter/*
 code/.local/*
@@ -19,9 +21,7 @@ code/**/*solution*
 code/day_*/**/*.pdf
 
 # Day 1
-code/day_1/1_linear_regression/1D_linear_regression/data/*.npy
-
-code/day_1/1_linear_regression/dD_linear_regression/data/*.npy
+code/day_1/1_linear_regression/**/*.npy
 
 # Day 2
 code/day_2/3_metrics/hybrid_data/images/*_*
