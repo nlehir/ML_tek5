@@ -16,35 +16,17 @@ code/__pycache__/*
 code/.bash_history
 
 code/**/*solution*
+code/day_*/**/*.pdf
 
 # Day 1
-code/day_1/1_linear_regression/1D_linear_regression/images/*.pdf
-code/day_1/1_linear_regression/1D_linear_regression/images/polynomial_regression/*.pdf
-code/day_1/1_linear_regression/1D_linear_regression/images/datasets/*.pdf
-code/day_1/1_linear_regression/1D_linear_regression/images_backup/*.pdf
 code/day_1/1_linear_regression/1D_linear_regression/data/*.npy
-code/day_1/1_linear_regression/1D_linear_regression/*.pdf
 
 code/day_1/1_linear_regression/dD_linear_regression/data/*.npy
-code/day_1/1_linear_regression/dD_linear_regression/*.pdf
 
 # Day 2
-code/day_2/1_logistic_regression/digits_dataset/images/*.pdf
-
-code/day_2/1_logistic_regression/feature_maps/images/*.pdf
-
-code/day_2/3_metrics/geometric_data/images/*.pdf
-code/day_2/3_metrics/hybrid_data/images/*.pdf
 code/day_2/3_metrics/hybrid_data/images/*_*
 
-code/day_2/4_clustering/1_k_means/images/*.pdf
-code/day_2/4_clustering/2_hierarchical_clustering/clusterings/*.pdf
-code/day_2/4_clustering/2_hierarchical_clustering/images/*.pdf
-
 # Day 3
-code/day_3/1_gradients/1d_function/*.pdf
-code/day_3/1_gradients/function_1/*.pdf
-code/day_3/1_gradients/function_2/*.pdf
 code/day_3/2_neural_networks/mnist/data/*.npy
-code/day_3/2_neural_networks/mnist/images/*.pdf
-code/day_3/2_neural_networks/toy_data_numpy/images/*.pdf
+
+# Day 4
