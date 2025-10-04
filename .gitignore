@@ -30,3 +30,5 @@ code/day_2/3_metrics/hybrid_data/images/*_*
 code/day_3/2_neural_networks/mnist/data/*.npy
 
 # Day 4
+code/day_4/3_feature_selection/*.pkz
+code/day_4/3_feature_selection/vocabularies/*.txt
