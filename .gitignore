@@ -32,3 +32,6 @@ code/day_3/2_neural_networks/mnist/data/*.npy
 # Day 4
 code/day_4/3_feature_selection/*.pkz
 code/day_4/3_feature_selection/vocabularies/*.txt
+
+# Day 4
+code/day_5/1_cart/fish/images/**/fish*
