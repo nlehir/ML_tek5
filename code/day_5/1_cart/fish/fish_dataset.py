@@ -1,6 +1,6 @@
 # create a simple fish dataset
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
 nb_data = 400
 
@@ -29,8 +29,8 @@ nbins = 50
 plt.hist(fish_length, bins=nbins)
 title = "distribution of the length of the fish in centimeters"
 plt.title(title)
-plt.xlabel('value')
-plt.ylabel('nb of occurrences')
+plt.xlabel("value")
+plt.ylabel("nb of occurrences")
 plt.savefig("images/visualizations/fish_length.pdf")
 plt.close()
 
@@ -38,8 +38,8 @@ plt.close()
 plt.hist(fish_weight, bins=nbins)
 title = "distribution of the weight of the fish in kilos"
 plt.title(title)
-plt.xlabel('value')
-plt.ylabel('nb of occurrences')
+plt.xlabel("value")
+plt.ylabel("nb of occurrences")
 plt.savefig("images/visualizations/fish_weight.pdf")
 plt.close()
 
@@ -50,8 +50,8 @@ plt.hist(tuna_length, color="green", bins=nbins, label="tuna", alpha=0.5)
 plt.hist(salmon_length, color="blue", bins=nbins, label="salmon", alpha=0.5)
 title = "distribution of the length of the fish in centimeters"
 plt.title(title)
-plt.xlabel('value')
-plt.ylabel('nb of occurrences')
+plt.xlabel("value")
+plt.ylabel("nb of occurrences")
 plt.legend(loc="best")
 plt.savefig("images/visualizations/fish_length_with_class.pdf")
 plt.close()
@@ -60,8 +60,8 @@ plt.hist(tuna_weight, color="green", bins=nbins, label="tuna", alpha=0.5)
 plt.hist(salmon_weight, color="blue", bins=nbins, label="salmon", alpha=0.5)
 title = "distribution of the weight of the fish in Kg"
 plt.title(title)
-plt.xlabel('value')
-plt.ylabel('nb of occurrences')
+plt.xlabel("value")
+plt.ylabel("nb of occurrences")
 plt.legend(loc="best")
 plt.savefig("images/visualizations/fish_weight_with_class.pdf")
 plt.close()

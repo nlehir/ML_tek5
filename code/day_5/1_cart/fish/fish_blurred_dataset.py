@@ -1,6 +1,7 @@
 """
-    add another feature to the dataset
+add another feature to the dataset
 """
+
 # create a simple fish dataset
 import numpy as np
 

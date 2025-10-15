@@ -2,9 +2,8 @@ import os
 
 import matplotlib.pyplot as plt
 import torch
-from utils import load_data, clean_filename
 from constants import SIGMA
-
+from utils import clean_filename, load_data
 
 # load data
 DATA_FOLDER = os.path.join("data")

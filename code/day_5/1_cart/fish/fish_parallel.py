@@ -1,5 +1,5 @@
-import plotly.express as px
 import numpy as np
+import plotly.express as px
 
 fish_features = np.load("data/fish_features.npy")
 fish_class = np.load("data/fish_class.npy")
@@ -19,10 +19,12 @@ salmon_weight = fish_features[salmon_index, 1]
 
 # labels={"species_id": "Species", "sepal_width": "Sepal Width", "sepal_length": "Sepal Length", "petal_width": "Petal Width", "petal_length": "Petal Length", }
 
-fig = px.parallel_coordinates(fish_features,
-                              color=fish_class,
-                              # labels=labels,
-                              color_continuous_scale=px.colors.diverging.Tealrose,
-                              color_continuous_midpoint=2)
+fig = px.parallel_coordinates(
+    fish_features,
+    color=fish_class,
+    # labels=labels,
+    color_continuous_scale=px.colors.diverging.Tealrose,
+    color_continuous_midpoint=2,
+)
 fig.show()
 # fig.write_image("parallel_coordinate_plot.pdf")

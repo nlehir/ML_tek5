@@ -1,7 +1,7 @@
+import graphviz
 from pandas.core.base import doc
 from sklearn import tree
 from sklearn.datasets import load_iris
-import graphviz
 
 
 def main() -> None:

@@ -8,7 +8,7 @@ import os
 import matplotlib.pyplot as plt
 import numpy as np
 from constants import SIGMA
-from utils import load_data, clean_filename
+from utils import clean_filename, load_data
 
 
 def fit_polynom(

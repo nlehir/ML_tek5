@@ -1,5 +1,5 @@
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
 fish_features = np.load("data/fish_features.npy")
 fish_class = np.load("data/fish_class.npy")
@@ -16,9 +16,8 @@ salmon_length = fish_features[salmon_index, 0]
 tuna_weight = fish_features[tuna_index, 1]
 salmon_weight = fish_features[salmon_index, 1]
 
-plt.plot(tuna_length, tuna_weight, 'o', color="green", alpha=0.5, label="tuna")
-plt.plot(salmon_length, salmon_weight, 'o', color="blue", alpha=0.5,
-         label="salmon")
+plt.plot(tuna_length, tuna_weight, "o", color="green", alpha=0.5, label="tuna")
+plt.plot(salmon_length, salmon_weight, "o", color="blue", alpha=0.5, label="salmon")
 plt.xlabel("fish length")
 plt.ylabel("fish weight")
 plt.legend(loc="best")
