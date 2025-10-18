@@ -28,6 +28,7 @@ code/day_2/3_metrics/hybrid_data/images/*_*
 
 # Day 3
 code/day_3/2_neural_networks/mnist/data/*.npy
+code/day_3/2_neural_networks/toy_data_numpy/with_autograd.py
 
 # Day 4
 code/day_4/3_feature_selection/*.pkz
