@@ -94,8 +94,6 @@ the organisation might evolve a little bit.
 
 * Reinforcement learning
 
-* Some results on statistical learning and more modern topics
-
 * Simplicity bias of neural networks.
 
 * Project follow-up
