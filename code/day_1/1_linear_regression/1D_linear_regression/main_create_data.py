@@ -16,7 +16,7 @@ def main():
         return -3 * x - (x / 2) ** 2 + 500
 
     # temperature in degree
-    temperature = np.random.uniform(-5, 35, N_SAMPLES)
+    temperature = rng.uniform(-5, 35, N_SAMPLES)
 
     # power consumption in MW
     power_consumption = bayes_predictor(temperature) + rng.normal(
