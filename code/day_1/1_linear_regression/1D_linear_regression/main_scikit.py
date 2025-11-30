@@ -7,12 +7,12 @@ import os
 import numpy as np
 from sklearn.linear_model import LinearRegression
 
+from constants import STD_NOISE
+from utils_files import load_data
+
 
 def main():
-    X_train = np.load(os.path.join("data", "X_train.npy"))
-    y_train = np.load(os.path.join("data", "y_train.npy"))
-    X_test = np.load(os.path.join("data", "X_test.npy"))
-    y_test = np.load(os.path.join("data", "y_test.npy"))
+    X_train, X_test, y_train, y_test = load_data(std=STD_NOISE)
 
     X_train = X_train.reshape((-1, 1))
     X_test = X_test.reshape((-1, 1))
