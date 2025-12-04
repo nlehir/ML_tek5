@@ -50,7 +50,7 @@ def cluster_dataset(nbs_of_iterations: int) -> None:
         for datapoint in range(nb_samples):
             """
             Find the closest centroid for this point
-            add lines here
+            ADD LINES HERE
             """
             pass
 
@@ -79,7 +79,7 @@ def cluster_dataset(nbs_of_iterations: int) -> None:
 
         # Update centroids positions
         """
-        add lines here
+        ADD LINES HERE
         """
         print(f"x0: {x_centroids[0]:.2f}  y0: {y_centroids[0]:.2f}")
         print(f"x1: {x_centroids[1]:.2f}  y1: {y_centroids[1]:.2f}")
