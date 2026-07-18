@@ -9,6 +9,7 @@ GAMMA = 0.8
 # set the number of exploration steps
 N_STEPS = 200
 
+rng = np.random.default_rng()
 
 def move_agent(agent_position: tuple[int, int], world: np.ndarray):
     """
@@ -26,7 +27,10 @@ def move_agent(agent_position: tuple[int, int], world: np.ndarray):
     """
     # boolean representing if we moved the agent
     moved_agent = False
-    new_position = agent_position
+    while not moved_agent:
+        deplacement = rng.integers(low=-1, high=2, size=2)
+        new_position = agent_position + deplacement
+        moved_agent = world[new_position[0]][new_position[1]]
     return new_position
 
 
