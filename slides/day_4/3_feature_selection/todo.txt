@@ -1,0 +1,5 @@
+chi2
+scorer 3 features
+save vocabulary pour chaque C de L1
+pourquoi y a tout ça au début du 4 ?
+linear pipeline
