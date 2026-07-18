@@ -28,9 +28,9 @@ BCOR5mm, % Binding correction
 
 \section{\color{Blue}Introduction}
 
-In this project TODO
+In this project we explore various branches of machine learning, in an attempt to give an partial overview of the domain. The studied datasets are chosen in order to provide interesting problems, while at the same time not requiring a computing power that would be forbidding for general use hardware.
 
-As this course is dedicated to discovering and exploring some of the many principles of machine learning, rather than being a production-oriented course, you are encouraged to explore original and personal approaches. It is not a huge deal is the final scores are not outstanding, as long as you took the chance to explore a custom approach and learned new methods.
+You are encouraged to explore and test various approaches, found both by researching litterature and proposing original, personal methods.
 
 \subsection{Organization}
 
@@ -45,7 +45,7 @@ You can find the course material at this address:
 
 There will be a final defense to present your work. Please make a couple of slides per task and respect the following maximum durations:
 \begin{itemize}
-    \item \ref{sub:ml} (4 min)
+    \item \ref{sub:ml} (5 min)
     \item \ref{sub:mnist} (7 min)
     \item \ref{sub:uvr} (7 min)
     \item \ref{sub:food101} (7 min)
@@ -72,7 +72,7 @@ During the defense, what is expected is that you explain your process to arrive 
         \item define the objective with an exact ML vocabulary.
 		\item describe what the inputs and outputs of the model are. Recall the number of features and of samples, briefly describe the features.
 	\end{itemize}
-    \item provide an \textbf{{evaluation}} or multiple evaluations of the obtained estimator(s), thanks to scorings of your choice.
+    \item provide an \textbf{{evaluation}} or multiple evaluations of the obtained estimator(s), thanks to scorings of your choice. Be \textbf{quantitative} and precise about the results. When you mention the score of an estimator, \textbf{always} explicitely mention whether it is a train, test, validation, or cross-validation score (see the "scoring" chapter in the class).
     \item discuss the results obtained. To what extent have we solved the problem ? Could the model be actually used ? What precision can be expected with the model on unseen data ?
     \item Example of explanations and discussions that are expected in the defense: discussion over the choice of models (model selection), hyperparameters, details on the optimization (or model training) process, and conclusions on which method(s) worked best, or over the choice of preprocessing methods on the datasets.
     \item Example of explanations \textbf{not }to include in the defense:
@@ -80,8 +80,6 @@ During the defense, what is expected is that you explain your process to arrive 
             \item high level presentation of the course itsself and of the tasks: please stay technical.
             \item presentation of elementary python function, or library functions from torch, numpy, matplotlib, or the libraries themselves. You should \textbf{not} present these. You can however discuss specific functions or methods that are important for the optimization process, for instance in pytorch or tensorflow algorithms and optimizers (but again, you do not need to explain what pytorch is).
         \end{itemize}
-    \item be \textbf{quantitative} and precise about the results.
-    \item when you mention the score of an estimator, \textbf{always} explicitely mention whether it is a train, test, validation, or cross-validation score (see the "scoring" chapter in the class)
 	\item never forget to label the axes of plots
 	\item never forget to mention the dimensions (unités) of the quantities
     \item if relevant or necessary, preprocess the data, and to justify this preprocessing. You could compare the estimator(s) obtained with and without preprocessing.
@@ -90,7 +88,7 @@ During the defense, what is expected is that you explain your process to arrive 
 \section{Tasks}%
 \label{sub:tasks}
 
-\subsection{General ML knowledge (TODO)}%
+\subsection{General ML knowledge}%
 \label{sub:ml}
 
 Define these concepts in your own words, and illustrate them with examples:
@@ -116,7 +114,7 @@ Look for the \textbf{fastest possible way} to reach a $0.97$ test accuracy, on a
 
 In this exercise, what we measure is the complete learning procedure: data loading $+$ optimization time. We would like to \textbf{accelerate} it. Please also monitor the impact of the various methods on the \textbf{inference time}.
 
-\textbf{Super important}: Please note that your objective is \textbf{not to simply reach the target test accuracy}. Your objective is to compare different methods to reach this accuracy as fast as possible. You can for instance isolate one parameter of the learning process, for example the learning rate, and plot the time to reach the target accuracy as a function of the learning rate. But this is just one possible example amongst many possibilities, don't hesitate to profile the learning and inference and to explore any acceleration method available.
+\textbf{Super important}: Please note that your objective is \textbf{not to simply reach the target test accuracy}. Your objective is to compare different methods to \textbf{reach this accuracy as fast as possible}. You can for instance isolate one parameter of the learning process, for example the learning rate, and plot the time to reach the target accuracy as a function of the learning rate. But this is just one possible example amongst many possibilities. Profile learning and inference (for instance with torch profilers and trace visualization with perfetto) and explore any acceleration method available. Provide \textbf{visual representations} of the tradeoffs and of the impact of the various parameters.
 
 Note that you can stop model training as soon as the target accuracy is reached.
 \\
@@ -133,28 +131,32 @@ Here are some suggestions:
 
 You are encouraged to present and analyse results of code profiling in order to find speed bottlenecks. Pay attention to the fact that profiling GPUs or pytorch code might have specificities.
 
-\subsection{Ultimate Vocal remover}%
+\subsection{Training and fine tuning for vocal removal}%
 \label{sub:uvr}
 
-\url{https://ultimatevocalremover.com/} 
+Ultimate vocal remover (\url{https://ultimatevocalremover.com/}) allows to remove the vocals from an audio file. The program uses an adaptation pre trained audio source separation model, called demucs (\url{adefossez/demucs}). However, the dataset that were used in order to obtain this model is not disclosed by UVR. The UVR repo only contains the inference code.
 
-\subsection{Food 101}%
+Your objective is to train your own model and compare its performance to that of the native UVR model. You can explore various datasets and various model architectures, or fine-tune prexisting models. Produce audio examples in order to compare the different approaches.
+
+\subsection{Compression of a model for Food 101 classification}%
 \label{sub:food101}
 
-\url{https://huggingface.co/datasets/ethz/food101}
+The Food 101 dataset (\url{https://huggingface.co/datasets/ethz/food101}) is a classical classification dataset. Many models have already been trained in order to solve this problem. You objective is to find the smallest, lightest possible neural network model that keeps a score close to the networks that achieve optimal performance. Here, we are interested in compressing an already trained network, in order to \textbf{decrease the size in memory, number of parameters, and inference time}. To do so, many methods exist, such a quantization, distillation and other methods that you should explore. You are encouraged to explore research articles and use methods extracted from those. Study the tradeoff between the amount of compression and the final test score.
 
-\subsection{Tabular dataset (TODO)}%
+\subsection{Finding the best model on a tabular dataset}%
 \label{sub:tabular}
 
-Perform a TODO on the TODO dataset
+Solve the problem of predicting the dominant tree species in a forest area using the available features. You may use any model you want and you are encouraged to compare many types of models, including simple benchmarks.
+
+Among the various methods explored, you must explore at least one type of neural network and one ensemble learning method.
 
 Provide a short, general analysis of the dataset, that studies its statistical properties, outliers, correlation matrices, or any other interesting analysis. You may produce visualizations. If you present statistical analysis, discuss whether it is consistent with intuition or not (instead of for instance just showing a correlation matrix).
 
 compare several estimators / optimization procedures, from different points of view (scoring, training time, etc).
 
-\subsection{Clustering on the TODO dataset}
+\subsection{Clustering on the Santander dataset}
 \label{sub:Clustering}
 
-Perform a clustering on the TODO dataset ( \url{}) Discuss the important algorithmic details and research: for instance, the \textbf{metric} and the algorithm(s) that were used. Again, it is very important to discuss the results obtained, and to interpret the clusters obtained. A numerical \textbf{evaluation} of the model is also expected. Note that several scores exist for clustering (\url{https://scikit-learn.org/stable/api/sklearn.metrics.html}). Use a scoring, or several scoring, that are meaningful with respect to the considered problem.
+Perform a clustering on the Santander dataset ( \url{}). Discuss the important algorithmic details and research: for instance, the \textbf{metric} and the algorithm(s) that were used. Again, it is very important to discuss the results obtained, and to interpret the clusters obtained. A numerical \textbf{evaluation} of the model is also expected. Note that several scores exist for clustering (\url{https://scikit-learn.org/stable/api/sklearn.metrics.html}). Use a scoring, or several scoring, that are meaningful with respect to the considered problem.
 
 \end{document}
