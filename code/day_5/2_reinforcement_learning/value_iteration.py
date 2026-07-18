@@ -11,6 +11,7 @@ N_STEPS = 200
 
 rng = np.random.default_rng()
 
+
 def move_agent(agent_position: tuple[int, int], world: np.ndarray):
     """
     EDIT THIS FUNCTION

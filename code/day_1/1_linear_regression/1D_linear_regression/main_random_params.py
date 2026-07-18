@@ -46,7 +46,7 @@ def main() -> None:
             theta=theta,
             b=b,
             y_true=y_train,
-                )
+        )
         if train_error < best_train_error:
             best_train_error = train_error
             best_theta = theta
@@ -82,7 +82,7 @@ def main() -> None:
         theta=best_theta,
         b=best_b,
         y_true=y_test,
-            )
+    )
     print(
         "\n--------"
         f"\nbest theta:          {best_theta:.2f}"

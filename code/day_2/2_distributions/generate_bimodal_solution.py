@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 def main():
     mean_1 = 4
     std_dev_1 = 1
@@ -19,6 +20,7 @@ def main():
     plt.title(title)
     plt.tight_layout()
     plt.savefig("hist.pdf")
+
 
 if __name__ == "__main__":
     main()
