@@ -1,0 +1,331 @@
+\documentclass[
+10pt, % Main document font size
+a4paper, % Paper type, use 'letterpaper' for US Letter paper
+oneside, % One page layout (no page indentation)
+%twoside, % Two page layout (page indentation for binding and different headers)
+headinclude,footinclude, % Extra spacing for the header and footer
+BCOR5mm, % Binding correction
+]{scrartcl}
+\input{stru/structure.tex}
+\hyphenation{Fortran hy-phen-ation} 
+
+\title{\normalfont{Module Machine learning 2025-2026}} 
+\author{\spacedlowsmallcaps{Nicolas Le Hir}
+\\ \href{mailto:nicolaslehir@gmail.com}{nicolas.lehir@epitech.eu} 
+} 
+\setlength{\textfloatsep}{0.1cm}
+\date{}
+\begin{document}
+\renewcommand{\sectionmark}[1]{\markright{\spacedlowsmallcaps{#1}}}
+\lehead{\mbox{\llap{\small\thepage\kern1em\color{halfgray} \vline}\color{halfgray}\hspace{0.5em}\rightmark\hfil}} 
+\pagestyle{scrheadings}
+\maketitle 
+\setcounter{tocdepth}{3} 
+
+\tableofcontents
+
+\section{\large{\color{Blue}Organisation résumée}}
+
+\begin{table}[h!]
+  \centering
+\begin{tabular}{|l|l|l|}
+   \hline
+    Jour &  contenu \\
+   \hline
+    1 (\ref{sec:Jour 1})  & cours + présentation du projet  \\
+   \hline
+    2 (\ref{sec:Jour 3})  & cours + début projet  \\
+   \hline
+    3 (\ref{sec:Jour 2})  & cours \\
+   \hline
+    4  & soutenance intermédiaire \\
+   \hline
+    5 (\ref{sec:Jour 5}) & cours \\
+   \hline
+    6  & soutenance  \\
+   \hline
+\end{tabular}
+  \caption{Proposition d'organisation des journées}
+    \label{tab:sometab}
+\end{table}
+
+% \pagebreak
+
+\section{\large{\color{Blue}Plan détaillé}}
+
+% \subsection{Jour 1 matin}%
+\subsection{\large{Jour 1}}%
+\label{sec:Jour 1}
+
+% \begin{table}[h!]
+% \hspace*{-2cm}
+% \begin{tabular}{|l|l|}
+%    \hline
+%      Nombre d'heures & chapitre \\
+%    \hline
+%      2 &  Introduction au ML et aux différents paradigmes d'apprentissage. \\
+%    \hline
+%      1 &  Ensemble d'entrainement et de test, régression linéaire, régresssion polynomale (partie 1) \\
+%    \hline
+% \end{tabular}
+%   \caption{Jour 1 matin}
+%     \label{tab:sometab}
+% \end{table}
+
+\subsubsection{Introduction au ML et aux différents paradigmes d'apprentissage.}%
+\label{ssub:}
+
+Introduction des problématiques liées au ML et  des trois principaux  paradigmes historiques: apprentissage supervisé, apprentissage non supervisé, apprentissage par renforcement. Discussion sur les autres paradigmes existant, importants aujourd'hui (apprentissage auto-supervisé).
+
+\subsubsection{Apprentissage, ensemble d'entrainement et de test, régression linéaire, régresssion polynomale}%
+\label{ssub:}
+
+Notion d'entrainement (apprentissage de paramètres), de risque empirique et de surapprentissage. Illustration sur des exemples et discussion sur l'origine du problème: le nombre de données disponibles est fini. Présentation de la régression linéaire et de la régression polynomiale pour illustrer le problème.
+
+% \subsection{Jour 1 après-midi}%
+% \label{sec:Jour 1 pm}
+%
+% \begin{table}[h!]
+% \hspace*{-2cm}
+% \begin{tabular}{|l|l|}
+%    \hline
+%      Nombre d'heures & chapitre \\
+%    \hline
+%      1 &  Ensemble d'entrainement et de test, régression linéaire, régresssion polynomale (partie 2)  \\
+%    \hline
+%      2 &  Prérequis techniques: probabilités, métriques, librairies \\
+%    \hline
+%      1 &   Présentation du projet. \\
+%    \hline
+% \end{tabular}
+%   \caption{Jour 1 après-midi}
+%     \label{tab:sometab}
+% \end{table}
+
+
+\subsubsection{Prérequis techniques: probabilités, statistiques, métriques, librairies}%
+\label{ssub:}
+
+Présentation des briques techniques nécessaires au ML. Exercices pour s'entrainer à les manipuler et identifier les notions qui posent problème. Notion de logit.
+
+\subsubsection{Présentation du projet.}%
+\label{ssub:}
+
+Présentation des différentes parties et des objectifs.
+
+% \pagebreak
+
+% \subsection{Jour 2 matin}%
+\subsection{\large{Jour 2}}%
+\label{sec:Jour 2}
+
+% \begin{table}[h!]
+% \centering
+% \begin{tabular}{|l|l|}
+%    \hline
+%      Nombre d'heures & chapitre \\
+%    \hline
+%      1 &   Gradients\\
+%    \hline
+%      2  &   Réseaux de neurones\\
+%    \hline
+% \end{tabular}
+%   \caption{Jour 2 matin}
+%     \label{tab:sometab}
+% \end{table}
+%
+\subsubsection{Gradients}%
+\label{ssub:}
+
+Les algorithmes d'optimisation par descente de gradient sont omniprésents en ML. Explication de la raison de cette prédominance et du fonctionnement de ces algorithmes. Application sur des exemples simples.
+
+\subsubsection{Réseaux de neurones}%
+\label{ssub:}
+
+Les réseaux de neurones sont depuis une vingtaine d'années les types d'estimateurs les plus performants pour de nombreux problèmes ML en haute dimension (vision artificielle, NLP, LLMs). Présentation des NN, entrainement de NN simples et exemple d'un réseau deep learning sur MNIST.
+
+A confirmer: introduction aux réseaux récurrents, aux transformers et LLM.
+
+\subsubsection{Régularisation}%
+
+Souvent, l'apprentissage est modifié afin de contraindre certaines propriétés du modèle obtenu (réduction du surapprentissage, sparsité). Exemple avec la régression Ridge et l'équivalent en réseaux de neurones (weight decay).
+
+% \subsection{Jour 2 après-midi}%
+% \subsection{Jour 2 après-midi}%
+% \label{sec:Jour 2 pm}
+
+% \begin{table}[h!]
+% \centering
+% \begin{tabular}{|l|l|}
+%    \hline
+%      Nombre d'heures & chapitre \\
+%    \hline
+%     1.5  &   Estimation de densité\\
+%    \hline
+%     1  & Scoring   \\
+%    \hline
+%     1.5  & Follow-up projet + travaux pratiques   \\
+%    \hline
+% \end{tabular}
+%   \caption{Jour 2 après-midi}
+%     \label{tab:sometab}
+% \end{table}
+
+
+% \subsubsection{Estimation de densité}%
+% \label{ssub:}
+%
+% L'esimation de densité consiste en le calcul d'une distribution représentant les données. Cette distribution peut servir à l'analyse générale des données, mais aussi à l'échantillonage de données similaires au dataset.
+% Utilisation de mélanges de gaussiennes.
+
+\subsubsection{Scoring}%
+\label{ssub:}
+
+Etant donné un problème de ML, il existe plusieurs scores pour évaluer la qualité d'un estimateur. Il est imporant de bien connaître les différents scores les plus utilisés en ML et souvent utile de calculer plusieurs scores, notamment en classification.
+
+\subsubsection{Dicusssion sur le projet}%
+\label{ssub:Validation des datasets choisis par les étudiants.}
+
+Les étudiants avancent sur le projet et je réponds à leur questions éventuelles.
+
+% \pagebreak
+
+
+% \subsection{Jour 3 matin}%
+\subsection{\large{Jour 3}}%
+\label{sec:Jour 3}
+
+% \begin{table}[h!]
+% \centering
+% \begin{tabular}{|l|l|}
+%    \hline
+%      Nombre d'heures & chapitre \\
+%    \hline
+%     1.5  &  Classification, régression logistique. \\
+%    \hline
+%     1.5  &   Clustering\\
+%    \hline
+%     0.5  &   Hyperparamètres\\
+%    \hline
+% \end{tabular}
+%   \caption{Jour 3 matin}
+%     \label{tab:sometab}
+% \end{table}
+
+\subsubsection{Classification, régression logistique.}%
+\label{ssub:}
+
+Présentation de la classification binaire et du problème d'optimisation associé. Exercice d'application de la régression logistique avec  scikit-learn sur plusieurs datasets.
+
+\subsubsection{Clustering}%
+\label{ssub:}
+
+Introduction au problème du clustering et présentation de différents  algorithmess  (k-means,  clustering hiérarchique, spectral clustering). Discussion sur les hyperparamètres et le choix de l'algorithme.
+
+\subsubsection{Hyperparamètres}%
+\label{ssub:Hyperparamètres}
+
+Les hyperparamètres sont des paramètres des algorithmes choisis manuellement, par opposition aux paramètres appris par optimisation. Ces paramètres sont d'une importance capitale et il existe plusieurs méthodes importantes pour les choisir.
+
+\subsubsection{Arbres de classification et de régression, méthodes ensemblistes.}%
+\label{ssub:}
+
+Les arbres de classification et de régression sont une brique de base pour les méthodes ensemblistes les plus utilisées aujourd'hui (Random Forest, Gradient Tree Boosting), qui sont des méthodes atteignant des performances optimales sur de nombreux problèmes.
+
+
+% \subsection{Jour 3 après-midi}%
+% \label{sec:Jour 3 pm}
+%
+% \begin{table}[h!]
+%     \hspace*{-2cm}
+% \begin{tabular}{|l|l|}
+%    \hline
+%      Nombre d'heures & chapitre \\
+%    \hline
+%     1.5  &  Réduction de dimension \\
+%    \hline
+%     2 (voir en fonction du nombre de groupes) &    Validation des datasets choisis par les étudiants + travaux pratiques \\
+%    \hline
+% \end{tabular}
+%   \caption{Jour 3 après-midi}
+%     \label{tab:sometab}
+% \end{table}
+
+
+
+% \pagebreak
+
+\subsection{\large{Jour 4}}%
+\label{sec:Jour 4}
+
+\subsubsection{Soutenance intermédiaire}%
+\label{ssub:soutenance_finale}
+
+% \subsection{Jour 5 matin}%
+\subsection{\large{Jour 5}}%
+\label{sec:Jour 5}
+
+\subsubsection{Feature selection}%
+\label{ssub:}
+
+Pour de nombreux problèmes d'apprentissage supervisé, le prétraitement et la sélection des features dans l'espace d'entrée sont aussi importants que le choix de l'estimateur. Il existe de nombreuses techniques de sélection de features, basées sur des considérations statistiques ou sur un apprentissage séquentiels de plusieurs estimateurs.
+
+% \begin{table}[h!]
+% \centering
+% \begin{tabular}{|l|l|}
+%    \hline
+%      Nombre d'heures & chapitre \\
+%    \hline
+%     2  &   Arbres de classification et de régression, méthodes ensemblistes.\\
+%    \hline
+%     2  &  Risques réels et empiriques (apprentissage statistique) \\
+%    \hline
+% \end{tabular}
+%   \caption{Jour 5 matin}
+%     \label{tab:sometab}
+% \end{table}
+%
+
+
+% \subsection{Jour 5 après-midi}%
+% \label{sec:Jour 5 pm}
+%
+% \begin{table}[h!]
+% \centering
+% \begin{tabular}{|l|l|}
+%    \hline
+%      Nombre d'heures & chapitre \\
+%    \hline
+%     2  &   Simplicity bias des réseaux de neurones\\
+%    \hline
+%    1   &   Follow-up projet \\
+%    \hline
+% \end{tabular}
+%   \caption{Jour 5 après-midi}
+%     \label{tab:sometab}
+% \end{table}
+
+\subsubsection{Risques réels et empiriques (apprentissage statistique)}%
+\label{ssub:}
+
+La notion de risque réel et de risque empirique est très importante pour une compréhension profonde du problème du surapprentissage (overfitting) en ML. Présentation de quelques notions théoriques associées à ces notions de risques et discussion sur le compromis biais-variance.
+
+\subsubsection{Simplicity bias des réseaux de neurones}%
+\label{ssub:}
+
+Les réseaux de neurones semblent ne pas toujours suivre le comportement que l'on pourrait attendre, étant donné leurs nombre très élevé de paramètres: ils ont une tendance à ne pas surapprendre, s'ils sont correctement entraînés. Observation de ce phénomène sur un cas simple.
+
+\subsubsection{Réduction de dimension}%
+\label{ssub:}
+
+La réduction de dimension a de nombreuses applications en ML, du prétraitement de données en vue d'un apprentissage supervisé à la compression. Présentation de la PCA (réduction de dimension linéaire) et exemples de techniques non linéaires.
+
+\subsection{\large{Jour 6}}%
+\label{sec:Jour 6}
+
+
+\subsubsection{Soutenance finale}%
+\label{ssub:soutenance_finale}
+
+
+\end{document}
