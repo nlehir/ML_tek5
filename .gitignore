@@ -3,6 +3,16 @@
 *.swo
 *.pyc
 *.DS_Store
+*.log
+*.fls
+*.blg
+*.bbl
+*.fdb_latexmk
+*.out
+*.toc
+*.snm
+*.nav
+*.aux
 
 *__pycache__/
 *.db

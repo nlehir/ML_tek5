@@ -1,0 +1,160 @@
+\documentclass[
+10pt, % Main document font size
+a4paper, % Paper type, use 'letterpaper' for US Letter paper
+oneside, % One page layout (no page indentation)
+%twoside, % Two page layout (page indentation for binding and different headers)
+headinclude,footinclude, % Extra spacing for the header and footer
+BCOR5mm, % Binding correction
+]{scrartcl}
+\input{stru/structure.tex}
+\hyphenation{Fortran hy-phen-ation} 
+
+\title{\normalfont{Machine Learning Tek5 2026-2027 project}} 
+\author{\spacedlowsmallcaps{Nicolas Le Hir}
+\\ \href{mailto:nicolaslehir@epitech.eu}{nicolas.lehir@epitech.eu} 
+} 
+\setlength{\textfloatsep}{0.1cm}
+\date{}
+\begin{document}
+\renewcommand{\sectionmark}[1]{\markright{\spacedlowsmallcaps{#1}}}
+\lehead{\mbox{\llap{\small\thepage\kern1em\color{halfgray} \vline}\color{halfgray}\hspace{0.5em}\rightmark\hfil}} 
+\pagestyle{scrheadings}
+\maketitle 
+\setcounter{tocdepth}{3} 
+
+\tableofcontents
+
+% \pagebreak
+
+\section{\color{Blue}Introduction}
+
+In this project TODO
+
+As this course is dedicated to discovering and exploring some of the many principles of machine learning, rather than being a production-oriented course, you are encouraged to explore original and personal approaches. It is not a huge deal is the final scores are not outstanding, as long as you took the chance to explore a custom approach and learned new methods.
+
+\subsection{Organization}
+
+\subsubsection{Course material}%
+
+You can find the course material at this address:
+
+\url{github.com/nlehir/ML_tek5/} 
+
+\subsection{Defense}%
+\label{sub:Defense}
+
+There will be a final defense to present your work. Please make a couple of slides per task and respect the following maximum durations:
+\begin{itemize}
+    \item \ref{sub:ml} (4 min)
+    \item \ref{sub:mnist} (7 min)
+    \item \ref{sub:uvr} (7 min)
+    \item \ref{sub:food101} (7 min)
+    \item \ref{sub:tabular} (7 min)
+    \item \ref{sub:Clustering} (7 min)
+\end{itemize}
+
+\subsubsection{Repository}%
+\label{ssub:Repository}
+
+The project consists in several independent exercises. \textbf{Before the defense, please send me your repo url}, so that I can browse the code. You can push your work to the epitech repo dedicated to the project, inside the course team. Please do not send a fork of the course repo, with some added files. Instead, make a repo containing only your project files.
+
+\subsubsection{Guidelines for the defense}%
+\label{ssub:Guidelines}
+
+All processing should be made with python3. Please include only \textbf{only technical} information in the defense.
+\\
+
+During the defense, what is expected is that you explain your process to arrive to the results. Unsuccessful trials and method are welcome ! It is very important to draw \textbf{conclusions} for each task. For each task, please include some short docstrings (if using scripts) or markdown (if using notebooks) that make it easier to browse the code.
+
+\begin{itemize}
+    \item \textbf{mandatory:} for  each task (except for \ref{sub:ml}):
+	\begin{itemize}
+        \item define the objective with an exact ML vocabulary.
+		\item describe what the inputs and outputs of the model are. Recall the number of features and of samples, briefly describe the features.
+	\end{itemize}
+    \item provide an \textbf{{evaluation}} or multiple evaluations of the obtained estimator(s), thanks to scorings of your choice.
+    \item discuss the results obtained. To what extent have we solved the problem ? Could the model be actually used ? What precision can be expected with the model on unseen data ?
+    \item Example of explanations and discussions that are expected in the defense: discussion over the choice of models (model selection), hyperparameters, details on the optimization (or model training) process, and conclusions on which method(s) worked best, or over the choice of preprocessing methods on the datasets.
+    \item Example of explanations \textbf{not }to include in the defense:
+        \begin{itemize}
+            \item high level presentation of the course itsself and of the tasks: please stay technical.
+            \item presentation of elementary python function, or library functions from torch, numpy, matplotlib, or the libraries themselves. You should \textbf{not} present these. You can however discuss specific functions or methods that are important for the optimization process, for instance in pytorch or tensorflow algorithms and optimizers (but again, you do not need to explain what pytorch is).
+        \end{itemize}
+    \item be \textbf{quantitative} and precise about the results.
+    \item when you mention the score of an estimator, \textbf{always} explicitely mention whether it is a train, test, validation, or cross-validation score (see the "scoring" chapter in the class)
+	\item never forget to label the axes of plots
+	\item never forget to mention the dimensions (unités) of the quantities
+    \item if relevant or necessary, preprocess the data, and to justify this preprocessing. You could compare the estimator(s) obtained with and without preprocessing.
+\end{itemize}
+
+\section{Tasks}%
+\label{sub:tasks}
+
+\subsection{General ML knowledge (TODO)}%
+\label{sub:ml}
+
+Define these concepts in your own words, and illustrate them with examples:
+
+\begin{itemize}
+    \item overfitting
+    \item feature, label
+    \item gradient and gradient descent
+    \item hyperparameter
+    \item the difference between supervised and unsupervised learning
+\end{itemize}
+
+Why is gradient descent usually not performed on hyperparameters ?
+
+\subsection{Training time optimization on MNIST}%
+\label{sub:mnist}
+
+As we have seen during the course, we can reach more than $0.99$ of test accuracy in a couple of minutes on a laptop on the MNIST dataset (\url{https://en.wikipedia.org/wiki/MNIST_database}). However, in many machine learning applications, especially in embedded systems, there is a need to optimize the learning time and also the inference time.
+\\
+
+Look for the \textbf{fastest possible way} to reach a $0.97$ test accuracy, on a given hardware of your choice. The hardware that you use may be your laptop 
+(you can also compare two laptops). You need to briefly present the hardware used (type of processor, frequency, number of cores, etc)
+
+In this exercise, what we measure is the complete learning procedure: data loading $+$ optimization time. We would like to \textbf{accelerate} it. Please also monitor the impact of the various methods on the \textbf{inference time}.
+
+\textbf{Super important}: Please note that your objective is \textbf{not to simply reach the target test accuracy}. Your objective is to compare different methods to reach this accuracy as fast as possible. You can for instance isolate one parameter of the learning process, for example the learning rate, and plot the time to reach the target accuracy as a function of the learning rate. But this is just one possible example amongst many possibilities, don't hesitate to profile the learning and inference and to explore any acceleration method available.
+
+Note that you can stop model training as soon as the target accuracy is reached.
+\\
+
+It is required that you explore at least one method taken from a book or from a scientific article. You can find the book or the article yourself, or use one of the references presented during the course. For instance, part II of the Deep learning book (\url{https://www.deeplearningbook.org/}) contains many interesting discussions, but other sources are accepted as well. Any research is welcome, including research on libraries that are not as famous as pytorch and tensforflow, like jax.
+
+Here are some suggestions:
+\begin{itemize}
+	\item you can start from the architecture that we use in this example:
+	    \url{https://github.com/nlehir/ML_tek5/tree/main/code/day_3/2_neural_networks/mnist} 
+	    and then try other methods to accelerate learning or inference time.
+	\item try to \textbf{isolate} paramaters by monitoring the change in speed after changing only one aspect of the pipeline, leaving the rest similar.
+\end{itemize}
+
+You are encouraged to present and analyse results of code profiling in order to find speed bottlenecks. Pay attention to the fact that profiling GPUs or pytorch code might have specificities.
+
+\subsection{Ultimate Vocal remover}%
+\label{sub:uvr}
+
+\url{https://ultimatevocalremover.com/} 
+
+\subsection{Food 101}%
+\label{sub:food101}
+
+\url{https://huggingface.co/datasets/ethz/food101}
+
+\subsection{Tabular dataset (TODO)}%
+\label{sub:tabular}
+
+Perform a TODO on the TODO dataset
+
+Provide a short, general analysis of the dataset, that studies its statistical properties, outliers, correlation matrices, or any other interesting analysis. You may produce visualizations. If you present statistical analysis, discuss whether it is consistent with intuition or not (instead of for instance just showing a correlation matrix).
+
+compare several estimators / optimization procedures, from different points of view (scoring, training time, etc).
+
+\subsection{Clustering on the TODO dataset}
+\label{sub:Clustering}
+
+Perform a clustering on the TODO dataset ( \url{}) Discuss the important algorithmic details and research: for instance, the \textbf{metric} and the algorithm(s) that were used. Again, it is very important to discuss the results obtained, and to interpret the clusters obtained. A numerical \textbf{evaluation} of the model is also expected. Note that several scores exist for clustering (\url{https://scikit-learn.org/stable/api/sklearn.metrics.html}). Use a scoring, or several scoring, that are meaningful with respect to the considered problem.
+
+\end{document}
