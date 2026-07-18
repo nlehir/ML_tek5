@@ -21,6 +21,8 @@
 
 format.sh
 
+project/arch/
+
 code/.ipython/*
 code/.jupyter/*
 code/.local/*
