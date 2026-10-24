@@ -22,9 +22,16 @@ BCOR5mm, % Binding correction
 \maketitle 
 \setcounter{tocdepth}{3} 
 
-\tableofcontents
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=0.9\textwidth]{uvr_gui}
+    \end{center}
+    \caption{UVR gui}\label{fig:uvr_gui}
+\end{figure}
 
-% \pagebreak
+\pagebreak
+
+\tableofcontents
 
 \section{\color{Blue}Introduction}
 
@@ -148,24 +155,45 @@ You are encouraged to present and analyse results of code profiling in order to 
 \subsection{Training and fine tuning for vocal removal}%
 \label{sub:uvr}
 
-Ultimate vocal remover (\url{https://ultimatevocalremover.com/}, \url{https://github.com/Anjok07/ultimatevocalremovergui/releases/tag/v5.6}) allows to remove the vocals from an audio file (this is sometimes useful in the music production world). In this context, the word "stem" stands for a main part in a song like the vocals, the drums, the bass, the synthetisers, etc.
+Ultimate vocal remover (\url{https://ultimatevocalremover.com/}, \url{https://github.com/Anjok07/ultimatevocalremovergui/releases/tag/v5.6}) allows to separate the stems from an audio music file (this is sometimes useful in the music production world). In this context, the word "stem" stands for a main part in a song like the vocals, the drums, the bass, the synthetisers, etc.
 
-The GUI allows to choose between various available pretrained models, notably:
-\begin{itemize}
-    \item[VR architecture] CNN, the oldest model in the app. Mostly for separation in 2 stems.
-    \item[MDX-Net] Mostly for separation in 2 stems.
-    \item[demucs] Hybrid transformer, can be used for multi-stem separation.
-\end{itemize}
+The GUI allows to choose between various available pretrained models families, among which we willuse the MDX-Net one. More details about UVR and its models are given in Appendix~\ref{app:uvr}.
 
 We note that the UVR contains the \textbf{inference code}, but not the \textbf{training} code. In this task, we will explore training our own models and compare their output to the models that are already available in UVR.
 
-\subsubsection{Adding a linear regression model (simple benchmark)}%
+\subsubsection{Benchmark model}%
+
+We will first add a very simple benchmark model to the GUI, without even training a model. The result will be the "mono" signal, which will yield a poor quality of vocal removal. The objective hre is to verify that we can manually add a model. Follow these steps:
+\begin{itemize}
+    \item copy the \textbf{my\textunderscore models/} folder to the uvr repo root. This folder contains:
+        \begin{itemize}
+            \item \textbf{1\textunderscore create\textunderscore benchmark\textunderscore model.py}: defines the mono channel benchmark model, and exports it to the .onnx format, used by the MDX-Net models in UVR.
+            \item \textbf{src/model\textunderscore saving.py}: defines utility functions to export the model and its metadata (please find more information in the Appendix ~\ref{app:uvr})
+        \end{itemize}
+
+\end{itemize}
 
 \subsubsection{Training a neural network from scratch}%
+\label{ssub:smallnn}
 
-\subsubsection{Fine tuning a pre-trained model on a specific genre}%
+The problem
 
-Produce audio examples in order to compare the different approaches to the original UVR !
+\subsubsection{Fine tuning a pre-trained model on a degraded audio}%
+\label{ssub:fine_tune}
+
+WILO: finir description étapes. Dire que degrade data donne un exemple mais qu'ils peuvent en utiliser d'autres.
+
+prendre les images de config pour le cours
+
+leur donner aussi uvr format
+
+dire d'ajouter une évaluation (SDR)
+
+lire le nic instructions
+
+\textbf{5\textunderscore degrade \textunderscore data.py} gives an example in order to 
+
+For steps \ref{ssub:smallnn} and \ref{ssub:fine_tune}, produce audio examples in order to compare the different approaches to the original UVR !
 
 \subsection{Compression of a model for Food 101 classification}%
 \label{sub:food101}
@@ -191,5 +219,55 @@ The Fashion MNIST dataset (\url{https://github.com/zalandoresearch/fashion-mnist
 A labeled dataset is interesting to cluster, because we can then compare the clusters (learned in an unsupervised way) to the labels (that have not been used in training). This comparison can be done by using specific \textbf{scores}, like the Normalized Mutual Information (NMI) (\url{https://scikit-learn.org/stable/modules/generated/sklearn.metrics.normalized_mutual_info_score.html}), the Adjusted Rand Index (\url{https://scikit-learn.org/stable/modules/generated/sklearn.metrics.adjusted_rand_score.html}), and/or by producing and interpreting \textbf{visualizations}. Note that other scores also exist (\url{https://scikit-learn.org/stable/api/sklearn.metrics.html}).
 
 Perform a clustering on the Fashion MNIST dataset. Discuss the important algorithmic details and research: for instance, the \textbf{metric} and optionally the \textbf{embedding(s)} and/or \textbf{dimensionality reduction} methods used. Again, it is very important to discuss and interpret the results obtained.
+
+\appendix
+
+\section{Ultimate Vocal Remover (UVR) in more details}%
+\label{app:uvr}
+
+\subsection{Installation}%
+\label{app:uvr_install}
+
+These steps are an example installation, I tested it on Ubuntu $24.04$, with a $x86\textunderscore 64$ architecture.
+
+\begin{itemize}
+    \item sudo apt update \&\& sudo apt upgrade
+    \item sudo apt-get install -y ffmpeg python3-pip python3-tk
+    \item add the uv environment files:
+        \begin{itemize}
+            \item pyproject.toml
+            \item uv.lock
+            \item .python-version
+        \end{itemize}
+\item uv run UVR.py (requirements.txt will be deleted)
+\end{itemize}
+
+\subsection{GUI}%
+\label{app:uvr_gui}
+
+The GUI can be seen on figure \ref{fig:uvr_gui}.
+
+\subsection{Models}%
+\label{app:uvr_models}
+
+UVR allows to host several types of models.
+
+\begin{itemize}
+    \item[VR architecture] CNN, the oldest model in the app. Mostly for separation in 2 stems. VR stands for "Vocal Removal".
+    \item[MDX-Net] Mostly for separation in 2 stems. MDX stands for "Music Demixing".
+    \item[demucs] Hybrid transformer, can be used for multi-stem separation. The name comes from "Deep extractor for music sources" and sounds like "demix".
+\end{itemize}
+
+\subsection{Inputs and outputs of the MDX-Net models (Spectrograms)}%
+\label{app:uvr_mdx}
+
+TODO
+
+\subsection{Model data and json files}%
+\label{app:uvr_json}
+
+TODO
+
+
 
 \end{document}
