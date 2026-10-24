@@ -43,7 +43,7 @@ You can find the course material at this address:
 \subsection{Defense}%
 \label{sub:Defense}
 
-There will be a final defense to present your work. Please make a couple of slides per task and respect the following maximum durations:
+There will be a final defense to present your work. Please make a couple of slides per task, however there is no minimum number of slides (if only 1 or 2 slides are enough for you, it is fine). During the defense, please respect the following maximum durations:
 \begin{itemize}
     \item \ref{sub:ml} (5 min)
     \item \ref{sub:mnist} (7 min)
@@ -58,23 +58,28 @@ There will be a final defense to present your work. Please make a couple of slid
 
 The project consists in several independent exercises. \textbf{Before the defense, please send me your repo url}, so that I can browse the code. You can push your work to the epitech repo dedicated to the project, inside the course team. Please do not send a fork of the course repo, with some added files. Instead, make a repo containing only your project files.
 
+\subsubsection{Usage of AI}
+\label{ssub:Guidelines}
+
+As this course is not a production course, I encourage you to take it as an opportunity to understand what you do and learn things, whatever the percentage of your code is written by AI.
+
 \subsubsection{Guidelines for the defense}%
 \label{ssub:Guidelines}
 
 All processing should be made with python3. Please include only \textbf{only technical} information in the defense.
 \\
 
-During the defense, what is expected is that you explain your process to arrive to the results. Unsuccessful trials and method are welcome ! It is very important to draw \textbf{conclusions} for each task. For each task, please include some short docstrings (if using scripts) or markdown (if using notebooks) that make it easier to browse the code.
+During the defense, what is expected is that you explain your process to arrive to the results. Unsuccessful trials and methods are welcome ! It is very important to draw \textbf{conclusions} for each task. For each task, please include some short docstrings (if using scripts) or markdown (if using notebooks) that make it easier to browse the code.
 
 \begin{itemize}
     \item \textbf{mandatory:} for  each task (except for \ref{sub:ml}):
 	\begin{itemize}
-        \item define the objective with an exact ML vocabulary.
+        \item quickly define the objective with an exact and minimalistic ML vocabulary.
 		\item describe what the inputs and outputs of the model are. Recall the number of features and of samples, briefly describe the features.
 	\end{itemize}
     \item provide an \textbf{{evaluation}} or multiple evaluations of the obtained estimator(s), thanks to scorings of your choice. Be \textbf{quantitative} and precise about the results. When you mention the score of an estimator, \textbf{always} explicitely mention whether it is a train, test, validation, or cross-validation score (see the "scoring" chapter in the class).
     \item discuss the results obtained. To what extent have we solved the problem ? Could the model be actually used ? What precision can be expected with the model on unseen data ?
-    \item Example of explanations and discussions that are expected in the defense: discussion over the choice of models (model selection), hyperparameters, details on the optimization (or model training) process, and conclusions on which method(s) worked best, or over the choice of preprocessing methods on the datasets.
+    \item Example of explanations and discussions that are expected in the defense: discussion over the choice of models (model selection), hyperparameters, details on the optimization (or model training) process, and conclusions on which method(s) worked best, or worst, or over the choice of preprocessing methods on the datasets.
     \item Example of explanations \textbf{not }to include in the defense:
         \begin{itemize}
             \item high level presentation of the course itsself and of the tasks: please stay technical.
@@ -94,8 +99,8 @@ During the defense, what is expected is that you explain your process to arrive 
 Define these concepts in your own words, and illustrate them with examples:
 
 \begin{itemize}
-    \item overfitting
     \item feature, label
+    \item overfitting
     \item gradient and gradient descent
     \item hyperparameter
     \item the difference between supervised and unsupervised learning
@@ -114,7 +119,16 @@ Look for the \textbf{fastest possible way} to reach a $0.97$ test accuracy, on a
 
 In this exercise, what we measure is the complete learning procedure: data loading $+$ optimization time. We would like to \textbf{accelerate} it. Please also monitor the impact of the various methods on the \textbf{inference time}.
 
-\textbf{Super important}: Please note that your objective is \textbf{not to simply reach the target test accuracy}. Your objective is to compare different methods to \textbf{reach this accuracy as fast as possible}. You can for instance isolate one parameter of the learning process, for example the learning rate, and plot the time to reach the target accuracy as a function of the learning rate. But this is just one possible example amongst many possibilities. Profile learning and inference (for instance with torch profilers and trace visualization with perfetto) and explore any acceleration method available. Provide \textbf{visual representations} of the tradeoffs and of the impact of the various parameters.
+\textbf{Super important}: Please note that your objective is \textbf{not to simply reach the target test accuracy}. Your objective is to compare different methods to \textbf{reach this accuracy as fast as possible}. You can for instance isolate one parameter of the learning process, for example:
+\begin{itemize}
+    \item the learning rate, and plot the time to reach the target accuracy as a function of the learning rate. 
+    \item the numerical precision and / or type of the numbers used at various stages of the pipeline
+    \item these are just 2 possible examples amongst many possibilities. Please come up with other variables to explore !
+\end{itemize}
+Profile learning and inference (for instance with torch profilers and trace visualization with perfetto) and explore any acceleration method available. Provide \textbf{visual representations} of the tradeoffs and of the impact of the variouYou can for instance isolate one parameter of the
+learning process, for example the learning rate, and plot the time to reach the target
+accuracy as a function of the learning rate. But this is just one possible example
+amongst many possibilities. Profile learning and s parameters.
 
 Note that you can stop model training as soon as the target accuracy is reached.
 \\
@@ -134,29 +148,48 @@ You are encouraged to present and analyse results of code profiling in order to 
 \subsection{Training and fine tuning for vocal removal}%
 \label{sub:uvr}
 
-Ultimate vocal remover (\url{https://ultimatevocalremover.com/}) allows to remove the vocals from an audio file. The program uses an adaptation pre trained audio source separation model, called demucs (\url{adefossez/demucs}). However, the dataset that were used in order to obtain this model is not disclosed by UVR. The UVR repo only contains the inference code.
+Ultimate vocal remover (\url{https://ultimatevocalremover.com/}, \url{https://github.com/Anjok07/ultimatevocalremovergui/releases/tag/v5.6}) allows to remove the vocals from an audio file (this is sometimes useful in the music production world). In this context, the word "stem" stands for a main part in a song like the vocals, the drums, the bass, the synthetisers, etc.
 
-Your objective is to train your own model and compare its performance to that of the native UVR model. You can explore various datasets and various model architectures, or fine-tune prexisting models. Produce audio examples in order to compare the different approaches.
+The GUI allows to choose between various available pretrained models, notably:
+\begin{itemize}
+    \item[VR architecture] CNN, the oldest model in the app. Mostly for separation in 2 stems.
+    \item[MDX-Net] Mostly for separation in 2 stems.
+    \item[demucs] Hybrid transformer, can be used for multi-stem separation.
+\end{itemize}
+
+We note that the UVR contains the \textbf{inference code}, but not the \textbf{training} code. In this task, we will explore training our own models and compare their output to the models that are already available in UVR.
+
+\subsubsection{Adding a linear regression model (simple benchmark)}%
+
+\subsubsection{Training a neural network from scratch}%
+
+\subsubsection{Fine tuning a pre-trained model on a specific genre}%
+
+Produce audio examples in order to compare the different approaches to the original UVR !
 
 \subsection{Compression of a model for Food 101 classification}%
 \label{sub:food101}
 
-The Food 101 dataset (\url{https://huggingface.co/datasets/ethz/food101}) is a classical classification dataset. Many models have already been trained in order to solve this problem. You objective is to find the smallest, lightest possible neural network model that keeps a score close to the networks that achieve optimal performance. Here, we are interested in compressing an already trained network, in order to \textbf{decrease the size in memory, number of parameters, and inference time}. To do so, many methods exist, such a quantization, distillation and other methods that you should explore. You are encouraged to explore research articles and use methods extracted from those. Study the tradeoff between the amount of compression and the final test score.
+The Food 101 dataset (\url{https://huggingface.co/datasets/ethz/food101}) is a classical classification dataset. Many models have already been trained in order to solve this problem. You objective is to find the smallest, lightest possible neural network model that keeps a score close to the networks that achieve optimal performance. Here, we are interested in \textbf{compressing} an already trained network, in order to \textbf{decrease the size in memory, number of parameters, and inference time}. To do so, many methods exist, such a quantization, distillation and other methods that you should explore. You are encouraged to read research articles and use methods extracted from those. Study the tradeoff between the amount of compression and the final test score, and illustrate this tradeoff with visualizations.
 
 \subsection{Finding the best model on a tabular dataset}%
 \label{sub:tabular}
 
-Solve the problem of predicting the dominant tree species in a forest area using the available features. You may use any model you want and you are encouraged to compare many types of models, including simple benchmarks.
+Solve the problem of predicting the dominant tree species in a forest area (located in Colorado, US), using the available features. The dataset may be found here \url{https://archive.ics.uci.edu/dataset/31/covertype}.
 
-Among the various methods explored, you must explore at least one type of neural network and one ensemble learning method.
+You may use any model you want and you are encouraged to compare many types of models, including simple benchmarks. Among the various methods explored, you must explore at least one type of neural network and one ensemble learning method.
 
-Provide a short, general analysis of the dataset, that studies its statistical properties, outliers, correlation matrices, or any other interesting analysis. You may produce visualizations. If you present statistical analysis, discuss whether it is consistent with intuition or not (instead of for instance just showing a correlation matrix).
+Provide a short, general analysis of the dataset, that studies its statistical properties, outliers, correlation matrices, or any other interesting analysis. You may produce visualizations. If you present statistical analysis, discuss at least a little bit whether it is consistent with intuition or not (instead of for instance just showing a correlation matrix).
 
-compare several estimators / optimization procedures, from different points of view (scoring, training time, etc).
+You must \textbf{compare} the various estimators / optimization procedures, from different points of views: scoring, training time, interpretability, robustness, size, or any point of view that you find interesting !
 
-\subsection{Clustering on the Santander dataset}
+\subsection{Clustering on the Fashion MNIST dataset}
 \label{sub:Clustering}
 
-Perform a clustering on the Santander dataset ( \url{}). Discuss the important algorithmic details and research: for instance, the \textbf{metric} and the algorithm(s) that were used. Again, it is very important to discuss the results obtained, and to interpret the clusters obtained. A numerical \textbf{evaluation} of the model is also expected. Note that several scores exist for clustering (\url{https://scikit-learn.org/stable/api/sklearn.metrics.html}). Use a scoring, or several scoring, that are meaningful with respect to the considered problem.
+The Fashion MNIST dataset (\url{https://github.com/zalandoresearch/fashion-mnist}) contains $28 \times 28$ pictures of clothes, with labels (like "Dress", "Pullover", etc).
+
+A labeled dataset is interesting to cluster, because we can then compare the clusters (learned in an unsupervised way) to the labels (that have not been used in training). This comparison can be done by using specific \textbf{scores}, like the Normalized Mutual Information (NMI) (\url{https://scikit-learn.org/stable/modules/generated/sklearn.metrics.normalized_mutual_info_score.html}), the Adjusted Rand Index (\url{https://scikit-learn.org/stable/modules/generated/sklearn.metrics.adjusted_rand_score.html}), and/or by producing and interpreting \textbf{visualizations}. Note that other scores also exist (\url{https://scikit-learn.org/stable/api/sklearn.metrics.html}).
+
+Perform a clustering on the Fashion MNIST dataset. Discuss the important algorithmic details and research: for instance, the \textbf{metric} and optionally the \textbf{embedding(s)} and/or \textbf{dimensionality reduction} methods used. Again, it is very important to discuss and interpret the results obtained.
 
 \end{document}
