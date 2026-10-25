@@ -52,12 +52,12 @@ You can find the course material at this address:
 
 There will be a final defense to present your work. Please make a couple of slides per task, however there is no minimum number of slides (if only 1 or 2 slides are enough for you, it is fine). During the defense, please respect the following maximum durations:
 \begin{itemize}
-    \item \ref{sub:ml} (5 min)
-    \item \ref{sub:mnist} (7 min)
-    \item \ref{sub:uvr} (7 min)
-    \item \ref{sub:food101} (7 min)
-    \item \ref{sub:tabular} (7 min)
-    \item \ref{sub:Clustering} (7 min)
+    \item \ref{sub:ml} (General ML knowledge) (5 min)
+    \item \ref{sub:mnist} (MNIST fast training) (7 min)
+    \item \ref{sub:uvr} (UVR Vocal Removal) (9 min)
+    \item \ref{sub:food101} (Model compression on Food101) (7 min)
+    \item \ref{sub:tabular} (Tabular data)(6 min)
+    \item \ref{sub:fashion} (Fashion-MNIST clustering) (6 min)
 \end{itemize}
 
 \subsubsection{Repository}%
@@ -161,39 +161,51 @@ The GUI allows to choose between various available pretrained models families, a
 
 We note that the UVR contains the \textbf{inference code}, but not the \textbf{training} code. In this task, we will explore training our own models and compare their output to the models that are already available in UVR.
 
-\subsubsection{Benchmark model}%
+To get familiar with UVR, start by following sections \ref{app:uvr_install} and \ref{app:uvr_gui} of the Appendix.
 
-We will first add a very simple benchmark model to the GUI, without even training a model. The result will be the "mono" signal, which will yield a poor quality of vocal removal. The objective hre is to verify that we can manually add a model. Follow these steps:
+\subsubsection{Benchmark model}%
+\label{ssub:benchmark}
+
+We will first add a very simple benchmark model to the GUI, without even training a model. The result will be the "mono" signal, which will yield a poor quality of vocal removal. The objective hre is to verify that we can manually add a model, and to get more familiar with the audio concepts and vocabulary. Follow these steps:
 \begin{itemize}
     \item copy the \textbf{my\textunderscore models/} folder to the uvr repo root. This folder contains:
         \begin{itemize}
+            \item \textbf{0\textunderscore download\textunderscore data.py}: useful for \ref{ssub:smallnn} and/or \ref{ssub:fine_tune}: fetches a small version of the MUSDB18 audio dataset (\url{https://zenodo.org/record/3270814/files/MUSDB18-7-STEMS.zip}). The audio is reduced to $7$ seconds compared to the original dataset, which you are encouraged to explore.
             \item \textbf{1\textunderscore create\textunderscore benchmark\textunderscore model.py}: defines the mono channel benchmark model, and exports it to the .onnx format, used by the MDX-Net models in UVR.
-            \item \textbf{src/model\textunderscore saving.py}: defines utility functions to export the model and its metadata (please find more information in the Appendix ~\ref{app:uvr})
+            \item \textbf{5\textunderscore degrade\textunderscore data.py}: creates a new, degraded audio dataset from the one fetched by \textbf{0\textunderscore download\textunderscore data.py}. Useful for \ref{ssub:fine_tune}.
+            \item \textbf{src/data\textunderscore preparation.py}: utility functions to parse audio clips to  (please find more information in the Appendix ~\ref{app:uvr} and in the file comments). Useful in all steps.
+            \item \textbf{src/degradation.py}: defines utility functions to degrade audio, useful in \ref{ssub:fine_tune}.
+            \item \textbf{src/model\textunderscore saving.py}: defines utility functions to export the model and its metadata (please find more information in the Appendix ~\ref{app:uvr} and in the file comments). Useful in all steps.
+            \item \textbf{src/spectograms.py}: defines \textbf{stft()}, a function that returns spectrograms from audio chunks. Useful in all steps.
         \end{itemize}
-
+    
+    \item run \textbf{1\textunderscore create\textunderscore benchmark\textunderscore model.py}. This will export an .onnx model to \textbf{models/MDX\textunderscore Net\textunderscore Models/Benchmark\textunderscore CentreChannel.onnx}. This model will now be available in the UVR GUI.
 \end{itemize}
 
-\subsubsection{Training a neural network from scratch}%
+This step is also for you to familiarize yourself with the inputs that are received by the MDX-Net models: \textbf{spectograms} of audio pieces called \textbf{chunks}. These concepts are defined more extensively in \ref{app:uvr_mdx}. For all these topics, please find more information in the Appendix ~\ref{app:uvr} and in the file comments
+
+\subsubsection{Training a small neural network from scratch}%
 \label{ssub:smallnn}
 
-The problem
+The problem of audio stem separation is not an easy one. We can not expect to easily train a neural network, with a random architecture, and have good results without a significant amount of trial and error.
+
+In most industrial applications, people usually start from a pretrained architecture, and fine tune from there (meaning, they retrain the model, using the pretrained one as an initialisation), using their own particular dataset.
+
+Still, in this step, we will try to see which results we can get by training a neural network from scratch, to witness this difficulty directly. Train a small neural network (a small number of layers at most) add it to the GUI and compare the results to the simple benchmark. You should try several datasets, depending on you hardware constraints. An example, small dataset can be fetch using \textbf{0\textunderscore download\textunderscore data.py}. You may experiment with data augmentation methods.
 
 \subsubsection{Fine tuning a pre-trained model on a degraded audio}%
 \label{ssub:fine_tune}
 
-WILO: finir description étapes. Dire que degrade data donne un exemple mais qu'ils peuvent en utiliser d'autres.
+We will now try to improve the quality of vocal removal, on degraded audio. By running \textbf{5\textunderscore degrade \textunderscore data.py}, you can produce an example degraded audio dataset, but you should experiment with difference and/or other datasets. Using these datasets, \textbf{fine-tune} a MDX-Net model of your choice in an attempt to improve it on degraded audio. Experiment with anything: the source dataset, the degradation method, the hyperparameters, data-augmentation methods, the pre-trained model, etc. 
 
-prendre les images de config pour le cours
+\subsubsection{Scoring and testing}%
+\label{ssub:fine_tune}
 
-leur donner aussi uvr format
-
-dire d'ajouter une évaluation (SDR)
-
-lire le nic instructions
-
-\textbf{5\textunderscore degrade \textunderscore data.py} gives an example in order to 
-
-For steps \ref{ssub:smallnn} and \ref{ssub:fine_tune}, produce audio examples in order to compare the different approaches to the original UVR !
+For steps \ref{ssub:benchmark}, \ref{ssub:smallnn} and \ref{ssub:fine_tune}:
+\begin{itemize}
+    \item compute a \textbf{numerical evaluation/scoring} of the model. A possible score here is the Signal to Distorsion ratio (SDR).
+    \item produce audio examples in order to compare the different approaches to the original UVR
+\end{itemize}
 
 \subsection{Compression of a model for Food 101 classification}%
 \label{sub:food101}
@@ -212,7 +224,7 @@ Provide a short, general analysis of the dataset, that studies its statistical p
 You must \textbf{compare} the various estimators / optimization procedures, from different points of views: scoring, training time, interpretability, robustness, size, or any point of view that you find interesting !
 
 \subsection{Clustering on the Fashion MNIST dataset}
-\label{sub:Clustering}
+\label{sub:fashion}
 
 The Fashion MNIST dataset (\url{https://github.com/zalandoresearch/fashion-mnist}) contains $28 \times 28$ pictures of clothes, with labels (like "Dress", "Pullover", etc).
 
@@ -231,6 +243,7 @@ Perform a clustering on the Fashion MNIST dataset. Discuss the important algorit
 These steps are an example installation, I tested it on Ubuntu $24.04$, with a $x86\textunderscore 64$ architecture.
 
 \begin{itemize}
+    \item clone the repo (\url{https://github.com/Anjok07/ultimatevocalremovergui/releases/tag/v5.6})
     \item sudo apt update \&\& sudo apt upgrade
     \item sudo apt-get install -y ffmpeg python3-pip python3-tk
     \item add the uv environment files:
@@ -242,10 +255,10 @@ These steps are an example installation, I tested it on Ubuntu $24.04$, with a $
 \item uv run UVR.py (requirements.txt will be deleted)
 \end{itemize}
 
-\subsection{GUI}%
+\subsection{GUI and usage.}%
 \label{app:uvr_gui}
 
-The GUI can be seen on figure \ref{fig:uvr_gui}.
+The GUI can be seen on figure \ref{fig:uvr_gui}. To start processing audio, you will need to download a model. While several model types are available in UVR, we will focus on MDX-Net models (but do not hesitate to explore the other ones if you are interested). After selecting MDX-Net in the "Choose process method", you can open the "Choose MDX-Net model" dropdown and open the model download center. There, you can for instance use "UVR-MDX-NET Inst HQ 3". The .onnx model will be stored in models/MDX\textunderscore Net\textunderscore Models/UVR-MDX-NET-Inst\textunderscore HQ\textunderscore 3.onnx. After that, you can start processing audio.
 
 \subsection{Models}%
 \label{app:uvr_models}
@@ -258,16 +271,49 @@ UVR allows to host several types of models.
     \item[demucs] Hybrid transformer, can be used for multi-stem separation. The name comes from "Deep extractor for music sources" and sounds like "demix".
 \end{itemize}
 
-\subsection{Inputs and outputs of the MDX-Net models (Spectrograms)}%
+\subsection{Digital audio, inputs and outputs of the MDX-Net models (chunks and spectrograms)}%
 \label{app:uvr_mdx}
 
-TODO
+Sounds we hear are continuous waveforms. But in the digital world, audio is \textbf{discretized}. Only a finite number of samples per second of the audio waveform are stored, typically $44100$ samples per second. We note that under certains mathematical conditions, this is sufficient to perfectly reproduce the audio signal (Nyquist-Shannon theorem).
+
+MDX-Net models are fed with \textbf{spectrograms} of audio \textbf{chunks}. A chunk is simply an audio piece, typically a small number of seconds (like $5.9$). Primarily, the audio we hear is in the \textbf{time domain}. The signal is the discretiezd amplitude of the wave as a function of the time. The \textbf{Fourier transform} allows to compute which \textbf{frequencies} are represented in the signal. We note that the frequency spectrum is also discretized (here, typically we use $2048$ frequency bins, stepped by $10.8$ Hz). Here, spectrograms are a colletion of Fourier transforms of audio \textbf{frames}. There are $256$ frames in the chunk, each frame containing $23$ ms of audio. We note that the frames \textbf{overlap}. You can find more information on this topic in the \textbf{my\textunderscore models/src/spectrograms.py} file. In figures \ref{fig:stft_bill} and \ref{fig:stft_grants}, we can see to example spectrograms.
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=0.95\textwidth]{Bill Chudziak - Children Of No-one_0.00s.png}
+    \end{center}
+    \caption{Visualization of a chunk spectrogram from the MUSDB18 reduced dataset.}\label{fig:stft_bill}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=0.95\textwidth]{Grants - PunchDrunk_0.23s.png}
+    \end{center}
+    \caption{Visualization of a chunk spectrogram from the MUSDB18 reduced dataset, from a different song}\label{fig:stft_grants}
+\end{figure}
 
 \subsection{Model data and json files}%
 \label{app:uvr_json}
 
-TODO
+MDX-Net models requires some metadata, stored as json files. These data contain necessary audio information, like the numver of frequency bins in the spectrograms, or the number of samples in a frame.
 
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=0.95\textwidth]{model_data.png}
+    \end{center}
+    \caption{An example model data json}\label{fig:}
+\end{figure}
 
+\subsection{MUSDB18 dataset}%
+\label{app:musdb}
+
+The MUSDB18 dataset (\url{https://zenodo.org/record/3270814/files/MUSDB18-7-STEMS.zip}) is an example audio dataset containing both the full audio and the separated stems, that can thus be used for model training.
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=0.95\textwidth]{data_musdb18.png}
+    \end{center}
+    \caption{In the dataset, for each song, the raw audio is provided, along with the $2$ steps to separate.}\label{fig:}
+\end{figure}
 
 \end{document}
