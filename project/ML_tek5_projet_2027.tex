@@ -26,7 +26,7 @@ BCOR5mm, % Binding correction
     \begin{center}
         \includegraphics[width=0.9\textwidth]{uvr_gui}
     \end{center}
-    \caption{UVR gui}\label{fig:uvr_gui}
+    \caption{UVR GUI}\label{fig:uvr_gui}
 \end{figure}
 
 \pagebreak
@@ -37,7 +37,7 @@ BCOR5mm, % Binding correction
 
 In this project we explore various branches of machine learning, in an attempt to give an partial overview of the domain. The studied datasets are chosen in order to provide interesting problems, while at the same time not requiring a computing power that would be forbidding for general use hardware.
 
-You are encouraged to explore and test various approaches, found both by researching litterature and proposing original, personal methods.
+You are encouraged to explore and test various approaches, found both by researching literature and proposing original, personal methods.
 
 \subsection{Organization}
 
@@ -63,7 +63,7 @@ There will be a final defense to present your work. Please make a couple of slid
 \subsubsection{Repository}%
 \label{ssub:Repository}
 
-The project consists in several independent exercises. \textbf{Before the defense, please send me your repo url}, so that I can browse the code. You can push your work to the epitech repo dedicated to the project, inside the course team. Please do not send a fork of the course repo, with some added files. Instead, make a repo containing only your project files.
+The project consists in several independent exercises. \textbf{Before the defense, please send me your repo url}, so that I can browse the code. You can push your work to the Epitech repo dedicated to the project, inside the course team. Please do not send a fork of the course repo, with some added files. Instead, make a repo containing only your project files.
 
 \subsubsection{Usage of AI}
 \label{ssub:Guidelines}
@@ -132,10 +132,7 @@ In this exercise, what we measure is the complete learning procedure: data loadi
     \item the numerical precision and / or type of the numbers used at various stages of the pipeline
     \item these are just 2 possible examples amongst many possibilities. Please come up with other variables to explore !
 \end{itemize}
-Profile learning and inference (for instance with torch profilers and trace visualization with perfetto) and explore any acceleration method available. Provide \textbf{visual representations} of the tradeoffs and of the impact of the variouYou can for instance isolate one parameter of the
-learning process, for example the learning rate, and plot the time to reach the target
-accuracy as a function of the learning rate. But this is just one possible example
-amongst many possibilities. Profile learning and s parameters.
+Profile learning and inference (for instance with torch profilers and trace visualization with perfetto) and explore any acceleration method available. Provide \textbf{visual representations} of the trade-offs and of the impact of the various parameters. You can for instance isolate one parameter of the learning process, like the learning rate, and plot the time to reach the target accuracy as a function of the learning rate. But this is just one possible example amongst many possibilities.
 
 Note that you can stop model training as soon as the target accuracy is reached.
 \\
@@ -147,7 +144,7 @@ Here are some suggestions:
 	\item you can start from the architecture that we use in this example:
 	    \url{https://github.com/nlehir/ML_tek5/tree/main/code/day_3/2_neural_networks/mnist} 
 	    and then try other methods to accelerate learning or inference time.
-	\item try to \textbf{isolate} paramaters by monitoring the change in speed after changing only one aspect of the pipeline, leaving the rest similar.
+	\item try to \textbf{isolate} parameters by monitoring the change in speed after changing only one aspect of the pipeline, leaving the rest similar.
 \end{itemize}
 
 You are encouraged to present and analyse results of code profiling in order to find speed bottlenecks. Pay attention to the fact that profiling GPUs or pytorch code might have specificities.
@@ -155,9 +152,9 @@ You are encouraged to present and analyse results of code profiling in order to 
 \subsection{Training and fine tuning for vocal removal}%
 \label{sub:uvr}
 
-Ultimate vocal remover (\url{https://ultimatevocalremover.com/}, \url{https://github.com/Anjok07/ultimatevocalremovergui/releases/tag/v5.6}) allows to separate the stems from an audio music file (this is sometimes useful in the music production world). In this context, the word "stem" stands for a main part in a song like the vocals, the drums, the bass, the synthetisers, etc.
+Ultimate vocal remover (\url{https://ultimatevocalremover.com/}, \url{https://github.com/Anjok07/ultimatevocalremovergui/releases/tag/v5.6}) allows to separate the stems from an audio music file (this is sometimes useful in the music production world). In this context, the word "stem" stands for a main part in a song like the vocals, the drums, the bass, the synthesisers, etc.
 
-The GUI allows to choose between various available pretrained models families, among which we willuse the MDX-Net one. More details about UVR and its models are given in Appendix~\ref{app:uvr}.
+The GUI allows to choose between various available pretrained models families, among which we will use the MDX-Net one. More details about UVR and its models are given in Appendix~\ref{app:uvr}.
 
 We note that the UVR contains the \textbf{inference code}, but not the \textbf{training} code. In this task, we will explore training our own models and compare their output to the models that are already available in UVR.
 
@@ -166,7 +163,7 @@ To get familiar with UVR, start by following sections \ref{app:uvr_install} and 
 \subsubsection{Benchmark model}%
 \label{ssub:benchmark}
 
-We will first add a very simple benchmark model to the GUI, without even training a model. The result will be the "mono" signal, which will yield a poor quality of vocal removal. The objective hre is to verify that we can manually add a model, and to get more familiar with the audio concepts and vocabulary. Follow these steps:
+We will first add a very simple benchmark model to the GUI, without even training a model. The result will be the "mono" signal, which will yield a poor quality of vocal removal. The objective here is to verify that we can manually add a model, and to get more familiar with the audio concepts and vocabulary. Follow these steps:
 \begin{itemize}
     \item copy the \textbf{my\textunderscore models/} folder to the uvr repo root. This folder contains:
         \begin{itemize}
@@ -203,14 +200,14 @@ We will now try to improve the quality of vocal removal, on degraded audio. By r
 
 For steps \ref{ssub:benchmark}, \ref{ssub:smallnn} and \ref{ssub:fine_tune}:
 \begin{itemize}
-    \item compute a \textbf{numerical evaluation/scoring} of the model. A possible score here is the Signal to Distorsion ratio (SDR).
+    \item compute a \textbf{numerical evaluation/scoring} of the model. A possible score here is the Signal to Distortion ratio (SDR).
     \item produce audio examples in order to compare the different approaches to the original UVR
 \end{itemize}
 
 \subsection{Compression of a model for Food 101 classification}%
 \label{sub:food101}
 
-The Food 101 dataset (\url{https://huggingface.co/datasets/ethz/food101}) is a classical classification dataset. Many models have already been trained in order to solve this problem. You objective is to find the smallest, lightest possible neural network model that keeps a score close to the networks that achieve optimal performance. Here, we are interested in \textbf{compressing} an already trained network, in order to \textbf{decrease the size in memory, number of parameters, and inference time}. To do so, many methods exist, such a quantization, distillation and other methods that you should explore. You are encouraged to read research articles and use methods extracted from those. Study the tradeoff between the amount of compression and the final test score, and illustrate this tradeoff with visualizations.
+The Food 101 dataset (\url{https://huggingface.co/datasets/ethz/food101}) is a classical classification dataset. Many models have already been trained in order to solve this problem. You objective is to find the smallest, lightest possible neural network model that keeps a score close to the networks that achieve optimal performance. Here, we are interested in \textbf{compressing} an already trained network, in order to \textbf{decrease the size in memory, number of parameters, and inference time}. To do so, many methods exist, such a quantization, distillation and other methods that you should explore. You are encouraged to read research articles and use methods extracted from those. Study the trade-off between the amount of compression and the final test score, and illustrate this trade-off with visualizations.
 
 \subsection{Finding the best model on a tabular dataset}%
 \label{sub:tabular}
@@ -258,7 +255,7 @@ These steps are an example installation, I tested it on Ubuntu $24.04$, with a $
 \subsection{GUI and usage.}%
 \label{app:uvr_gui}
 
-The GUI can be seen on figure \ref{fig:uvr_gui}. To start processing audio, you will need to download a model. While several model types are available in UVR, we will focus on MDX-Net models (but do not hesitate to explore the other ones if you are interested). After selecting MDX-Net in the "Choose process method", you can open the "Choose MDX-Net model" dropdown and open the model download center. There, you can for instance use "UVR-MDX-NET Inst HQ 3". The .onnx model will be stored in models/MDX\textunderscore Net\textunderscore Models/UVR-MDX-NET-Inst\textunderscore HQ\textunderscore 3.onnx. After that, you can start processing audio.
+The GUI can be seen on figure \ref{fig:uvr_gui}. To start processing audio, you will need to download a model. While several model types are available in UVR, we will focus on MDX-Net models (but do not hesitate to explore the other ones if you are interested). After selecting MDX-Net in the "Choose process method", you can open the "Choose MDX-Net model" drop-down and open the model download center. There, you can for instance use "UVR-MDX-NET Inst HQ 3". The .onnx model will be stored in models/MDX\textunderscore Net\textunderscore Models/UVR-MDX-NET-Inst\textunderscore HQ\textunderscore 3.onnx. After that, you can start processing audio.
 
 \subsection{Models}%
 \label{app:uvr_models}
@@ -274,9 +271,9 @@ UVR allows to host several types of models.
 \subsection{Digital audio, inputs and outputs of the MDX-Net models (chunks and spectrograms)}%
 \label{app:uvr_mdx}
 
-Sounds we hear are continuous waveforms. But in the digital world, audio is \textbf{discretized}. Only a finite number of samples per second of the audio waveform are stored, typically $44100$ samples per second. We note that under certains mathematical conditions, this is sufficient to perfectly reproduce the audio signal (Nyquist-Shannon theorem).
+Sounds we hear are continuous waveforms. But in the digital world, audio is \textbf{discretized}. Only a finite number of samples per second of the audio waveform are stored, typically $44100$ samples per second. We note that under certain mathematical conditions, this is sufficient to perfectly reproduce the audio signal (Nyquist-Shannon theorem).
 
-MDX-Net models are fed with \textbf{spectrograms} of audio \textbf{chunks}. A chunk is simply an audio piece, typically a small number of seconds (like $5.9$). Primarily, the audio we hear is in the \textbf{time domain}. The signal is the discretiezd amplitude of the wave as a function of the time. The \textbf{Fourier transform} allows to compute which \textbf{frequencies} are represented in the signal. We note that the frequency spectrum is also discretized (here, typically we use $2048$ frequency bins, stepped by $10.8$ Hz). Here, spectrograms are a colletion of Fourier transforms of audio \textbf{frames}. There are $256$ frames in the chunk, each frame containing $23$ ms of audio. We note that the frames \textbf{overlap}. You can find more information on this topic in the \textbf{my\textunderscore models/src/spectrograms.py} file. In figures \ref{fig:stft_bill} and \ref{fig:stft_grants}, we can see to example spectrograms.
+MDX-Net models are fed with \textbf{spectrograms} of audio \textbf{chunks}. A chunk is simply an audio piece, typically a small number of seconds (like $5.9$). Primarily, the audio we hear is in the \textbf{time domain}. The signal is the discretized amplitude of the wave as a function of the time. The \textbf{Fourier transform} allows to compute which \textbf{frequencies} are represented in the signal. We note that the frequency spectrum is also discretized (here, typically we use $2048$ frequency bins, stepped by $10.8$ Hz). Here, spectrograms are a collection of Fourier transforms of audio \textbf{frames}. There are $256$ frames in the chunk, each frame containing $23$ ms of audio. We note that the frames \textbf{overlap}. You can find more information on this topic in the \textbf{my\textunderscore models/src/spectrograms.py} file. In figures \ref{fig:stft_bill} and \ref{fig:stft_grants}, we can see to example spectrograms.
 
 \begin{figure}[H]
     \begin{center}
@@ -295,7 +292,7 @@ MDX-Net models are fed with \textbf{spectrograms} of audio \textbf{chunks}. A ch
 \subsection{Model data and json files}%
 \label{app:uvr_json}
 
-MDX-Net models requires some metadata, stored as json files. These data contain necessary audio information, like the numver of frequency bins in the spectrograms, or the number of samples in a frame.
+MDX-Net models requires some metadata, stored as json files. These data contain necessary audio information, like the number of frequency bins in the spectrograms, or the number of samples in a frame.
 
 \begin{figure}[H]
     \begin{center}
@@ -307,7 +304,7 @@ MDX-Net models requires some metadata, stored as json files. These data contain 
 \subsection{MUSDB18 dataset}%
 \label{app:musdb}
 
-The MUSDB18 dataset (\url{https://zenodo.org/record/3270814/files/MUSDB18-7-STEMS.zip}) is an example audio dataset containing both the full audio and the separated stems, that can thus be used for model training.
+The MUSDB18 dataset (\url{https://zenodo.org/record/3270814/files/MUSDB18-7-STEMS.zip}) is an example small audio dataset containing both the full audio and the separated stems, that can thus be used for model training. It is provided to you here as a solution to make some quick tests, but you should explore other datasets, like for instance the full version, of other datasets.
 
 \begin{figure}[H]
     \begin{center}
