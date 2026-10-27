@@ -4,7 +4,7 @@ Repository of the Tek5 machine learning course at Epitech, year 2025-2026.
 
 The first session starts October 29 2026
 
-The second session starts December 17th 2025
+The second session starts December 17th 2026
 
 ## Python environments
 
