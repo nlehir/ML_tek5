@@ -2,11 +2,11 @@
 
 Repository of the Tek5 machine learning course at Epitech, year 2025-2026.
 
-The first session starts September 18th 2025
+The first session starts October 29 2026
 
-The second session starts November 27th 2025
+The second session starts December 17th 2025
 
-## Python environment
+## Python environments
 
 To manage your python environment, several solutions exist.
 
@@ -37,6 +37,10 @@ Examples, and support for exercises done during the course.
 
 Useful documents and references.
 
+### exercises/
+
+Small mathematical exercises (we will see whether we work on them).
+
 ### slides/
 
 All the pdf presentations of the course.
@@ -45,55 +49,6 @@ All the pdf presentations of the course.
 
 Description of the projet and required datasets.
 
-## Content of the course
+## syllabus/
 
-The course is given over 5 days. Please note that during the first session,
-the organisation might evolve a little bit.
-
-### Day 1
-
-* Introduction
-
-* Notion of train and test set, first regression examples
-
-* Presentation of the project
-
-### Day 2
-
-* Classification and logistic regression
-
-* Technical prerequisites: probabilities, statistics, metrics
-
-* Clustering
-
-* Validation of the datasets chosen by the students for the project
-
-### Day 3
-
-* Optimization and gradient-based algorithms
-
-* Neural networks
-
-* Scoring
-
-* Project follow-up
-
-### Day 4
-
-* Dimensionality reduction
-
-* Density estimation
-
-* Feature selection
-
-* Project follow-up
-
-### Day 5
-
-* Classification and regression trees, ensemble methods
-
-* Reinforcement learning
-
-* Simplicity bias of neural networks.
-
-* Project follow-up
+The course is given over 4 days. The content is listed in syllabus/ML_tek5_syllabus_2027.pdf. Please note that during the first session, the organisation might evolve a little bit.
