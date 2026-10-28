@@ -69,7 +69,7 @@ def main():
     print(f"Polynomial regression, standard deviation {STD_NOISE}")
     X_train, X_test, y_train, y_test = load_data(std=STD_NOISE)
 
-    degrees = range(2, 30)
+    degrees = range(2, 40)
     train_errors = []
     test_errors = []
     n_train_samples = len(X_train)
