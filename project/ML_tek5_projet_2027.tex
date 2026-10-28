@@ -165,7 +165,7 @@ To get familiar with UVR, start by following sections \ref{app:uvr_install} and 
 
 We will first add a very simple benchmark model to the GUI, without even training a model. The result will be the "mono" signal, which will yield a poor quality of vocal removal. The objective here is to verify that we can manually add a model, and to get more familiar with the audio concepts and vocabulary. Follow these steps:
 \begin{itemize}
-    \item copy the \textbf{my\textunderscore models/} folder to the uvr repo root. This folder contains:
+    \item copy the \textbf{project/uvr\textunderscore my\textunderscore models/} folder to the uvr repo root. This folder contains:
         \begin{itemize}
             \item \textbf{0\textunderscore download\textunderscore data.py}: useful for \ref{ssub:smallnn} and/or \ref{ssub:fine_tune}: fetches a small version of the MUSDB18 audio dataset (\url{https://zenodo.org/record/3270814/files/MUSDB18-7-STEMS.zip}). The audio is reduced to $7$ seconds compared to the original dataset, which you are encouraged to explore.
             \item \textbf{1\textunderscore create\textunderscore benchmark\textunderscore model.py}: defines the mono channel benchmark model, and exports it to the .onnx format, used by the MDX-Net models in UVR.
