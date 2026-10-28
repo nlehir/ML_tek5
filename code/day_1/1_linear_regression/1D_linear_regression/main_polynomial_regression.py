@@ -70,8 +70,8 @@ def main():
     X_train, X_test, y_train, y_test = load_data(std=STD_NOISE)
 
     degrees = range(2, 30)
-    train_errors = list()
-    test_errors = list()
+    train_errors = []
+    test_errors = []
     n_train_samples = len(X_train)
     for degree in degrees:
         train_error, test_error = fit_polynom(
