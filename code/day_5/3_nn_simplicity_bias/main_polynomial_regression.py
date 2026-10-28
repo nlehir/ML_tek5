@@ -56,7 +56,7 @@ def fit_polynom(
     )
     plt.title(title)
     plt.tight_layout()
-    file_name = f"polyomial_regression_std_{SIGMA:.2E}_degree_{degree}"
+    file_name = f"polyomial_regression_std_{SIGMA:.2E}_degree_{degree:02d}"
     file_name = clean_filename(name=file_name)
     fig_path = os.path.join("images", "polynomial_regression", f"{file_name}.pdf")
     plt.savefig(fig_path)
@@ -72,6 +72,7 @@ def main():
     degrees = range(2, 30)
     train_errors = []
     test_errors = []
+    n_train_samples = len(X_train)
     for degree in degrees:
         train_error, test_error = fit_polynom(
             X_train=X_train,
@@ -90,7 +91,7 @@ def main():
     plt.ylabel("squared error")
     plt.yscale("log")
     plt.legend(loc="best")
-    title = f"Polynomial regression\nnoise standard deviation {SIGMA}"
+    title = f"Polynomial regression\nnoise standard deviation {SIGMA}\n{n_train_samples} training samples"
     plt.title(title)
     plt.tight_layout()
     fig_name = f"polynomial_regression_standard_deviation_{SIGMA}"
