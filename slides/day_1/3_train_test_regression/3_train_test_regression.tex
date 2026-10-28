@@ -122,7 +122,7 @@
         \label{fig:dataset}
     \end{figure}
 
-    The problem of supervised learning is that we want this function to perform well on \textbf{new, previously unseen samples}. It is not useful in itsself to perform well on the dataset !
+    The problem of supervised learning is that we want this function to perform well on \textbf{new, previously unseen samples}. It is not useful to perform well on the dataset !
 
 \end{frame}
 
@@ -157,7 +157,7 @@
 
 \begin{frame}{Loss functions}
 
-    To evaluate the performance of $\tilde{f}$, we use a \textbf{loss function}. The loss function is be a measure of the \textbf{discrepancy} between a prediction $\tilde{f}(x)$ and a \text{label} $y$ (that are both real numbers). In regression, the most common loss function is the squared loss:
+    To evaluate the performance of $\tilde{f}$, we use a \textbf{loss function}. The loss function is a measure of the \textbf{discrepancy} between a prediction $\tilde{f}(x)$ and a \text{label} $y$ (that are both real numbers). In regression, the most common loss function is the squared loss:
 	    \begin{equation}
 		(\tilde{f}(x)-y)^2
 	    \end{equation}
@@ -191,7 +191,7 @@
 
 \begin{frame}{Linear regression}
 
-    The remaining step is then to find $\tilde{f}$. The first step, called \textbf{model selection}, is to decide the type of function / model use. Many types of models exist, each one having potential drawbacks, for instance:
+    The remaining step is then to find $\tilde{f}$. The first step, called \textbf{model selection}, is to decide the type of function / model use. Many types of models exist, each one having potential assets ans drawbacks, for instance:
     \begin{itemize}
 	\item linear functions (which we will use in this first example).
 	\item polynomial functions
@@ -228,7 +228,7 @@
     \end{figure}
 
     The power consumption does not depend \textbf{only} on the temperature,
-    but also on many other variables, that we do not have access to here:
+    but also on many other variables (called \textbf{hidden variables}), that we do not have access to here:
     \begin{itemize}
         \item time in the day
         \item humidity, wind
@@ -421,10 +421,9 @@
 
     \begin{figure}[htpb]
     	\centering
-    	\includegraphics[width=0.7\textwidth]{polyomial_regression_std_20_0_degree_2}
+    	\includegraphics[width=0.7\textwidth]{polyomial_regression_std_10_0_degree_02_n_train_40}
     	\label{fig:}
     \end{figure}
-
 \end{frame}
 
 \begin{frame}
@@ -433,7 +432,7 @@
 
     \begin{figure}[htpb]
     	\centering
-    	\includegraphics[width=0.7\textwidth]{polyomial_regression_std_20_0_degree_2}
+    	\includegraphics[width=0.7\textwidth]{polyomial_regression_std_10_0_degree_02_n_train_40}
     	\label{fig:}
     \end{figure}
 
@@ -446,7 +445,7 @@
 
     \begin{figure}[htpb]
     	\centering
-    	\includegraphics[width=0.7\textwidth]{polyomial_regression_std_20_0_degree_15}
+    	\includegraphics[width=0.7\textwidth]{polyomial_regression_std_10_0_degree_20_n_train_40}
     	\label{fig:}
     \end{figure}
 
@@ -454,28 +453,22 @@
 
 
 \begin{frame}
-
     If the degree of the polynom is too large, \textbf{overfitting} happens.
-
     \begin{figure}[htpb]
     	\centering
-    	\includegraphics[width=0.7\textwidth]{polyomial_regression_std_20_0_degree_25}
+    	\includegraphics[width=0.7\textwidth]{polyomial_regression_std_10_0_degree_39_n_train_40}
     	\label{fig:}
     \end{figure}
-
 \end{frame}
 
 
 \begin{frame}
-
     If the degree of the polynom is too large, \textbf{overfitting} happens.
-
     \begin{figure}[htpb]
     	\centering
-    	\includegraphics[width=0.7\textwidth]{polynomial_regression_standard_deviation_20_0}
+    	\includegraphics[width=0.7\textwidth]{polynomial_regression_standard_deviation_10_n_train_40.pdf}
     	\label{fig:}
     \end{figure}
-
 \end{frame}
 
 \begin{frame}
@@ -484,7 +477,7 @@
 
     \begin{figure}[htpb]
     	\centering
-    	\includegraphics[width=0.7\textwidth]{polyomial_regression_std_1_0_degree_15}
+    	\includegraphics[width=0.7\textwidth]{polyomial_regression_std_1_0_degree_39_n_train_40}
     	\label{fig:}
     \end{figure}
 
@@ -497,7 +490,7 @@
 
     \begin{figure}[htpb]
     	\centering
-    	\includegraphics[width=0.7\textwidth]{polynomial_regression_standard_deviation_1_0}
+    	\includegraphics[width=0.7\textwidth]{polynomial_regression_standard_deviation_1_0_n_train_40}
     	\label{fig:}
     \end{figure}
 
@@ -510,7 +503,7 @@
 
     \begin{figure}[htpb]
     	\centering
-    	\includegraphics[width=0.7\textwidth]{polyomial_regression_std_0_0_degree_29}
+    	\includegraphics[width=0.7\textwidth]{polyomial_regression_std_0_0_degree_39_n_train_40}
     	\label{fig:}
     \end{figure}
 
@@ -524,7 +517,7 @@
 
     \begin{figure}[htpb]
     	\centering
-    	\includegraphics[width=0.7\textwidth]{polynomial_regression_standard_deviation_0_0}
+    	\includegraphics[width=0.7\textwidth]{polynomial_regression_standard_deviation_0_0_n_train_40}
     	\label{fig:}
     \end{figure}
 
@@ -536,7 +529,7 @@
 
     \begin{figure}[htpb]
     	\centering
-    	\includegraphics[width=0.7\textwidth]{polyomial_regression_std_20_0_degree_29_more_samples}
+    	\includegraphics[width=0.7\textwidth]{polyomial_regression_std_20_0_degree_16_n_train_268.pdf}
     	\label{fig:}
     \end{figure}
 
@@ -585,7 +578,7 @@
 	R_n(\theta, b) = \frac{1}{n}\sum_{i=1}^{n} (\langle\theta, x_i\rangle+b-y_i)^2
     \end{equation}
 
-    Almost similarly to the 1D case ($\theta\in \mathbb{R}$, $x_i\in \mathbb{R}$), where it was:
+    Almost identical to the 1D case ($\theta\in \mathbb{R}$, $x_i\in \mathbb{R}$), where it was:
 
     \begin{equation}
         R_n(\theta, b) = \frac{1}{n}\sum_{i=1}^{n} (\theta x_i+b-y_i)^2
@@ -660,9 +653,8 @@ x_{n}^T
 \textbf{cd ../dD\textunderscore linear\textunderscore regression/}
     \begin{itemize}
         \item Generate some data using \textbf{generate\textunderscore data.py}
-        \item Example with \textbf{OLS\textunderscore scikit.py}
+        \item Example with \textbf{OLS\textunderscore scikit.py} (performs the linear regression)
     \end{itemize}
-
 \end{frame}
 
 \begin{frame}{Ridge regression}
