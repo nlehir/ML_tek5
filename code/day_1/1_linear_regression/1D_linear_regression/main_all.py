@@ -3,30 +3,30 @@ Used to batch over all the main files and several noise
 standard deviations
 """
 
-import os
+import subprocess
 from pprint import pp
 
 STDS = [0, 1, 10, 20]
 
 
 def main():
-    commands = list()
+    commands = []
     for std in STDS:
-        command = f"uv run main_create_data.py  --std {std}"
+        command = ["uv", "run", "main_create_data.py", "--std", f"{std}"]
         commands.append(command)
 
-        command = f"uv run main_random_params.py  --std {std}"
+        command = ["uv", "run", "main_random_params.py", "--std", f"{std}"]
         commands.append(command)
 
-        command = f"uv run main_optimal_params_solution.py  --std {std}"
+        command = ["uv", "run", "main_optimal_params_solution.py", "--std", f"{std}"]
         commands.append(command)
 
-        command = f"uv run main_polynomial_regression.py  --std {std}"
+        command = ["uv", "run", "main_polynomial_regression.py", "--std", f"{std}"]
         commands.append(command)
 
     pp(commands)
     for command in commands:
-        os.system(command)
+        subprocess.run(command, check=False)
 
 
 if __name__ == "__main__":
