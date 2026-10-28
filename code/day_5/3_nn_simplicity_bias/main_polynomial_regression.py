@@ -70,8 +70,8 @@ def main():
     X_train, X_test, y_train, y_test = load_data(folder=DATA_FOLDER)
 
     degrees = range(2, 30)
-    train_errors = list()
-    test_errors = list()
+    train_errors = []
+    test_errors = []
     for degree in degrees:
         train_error, test_error = fit_polynom(
             X_train=X_train,
