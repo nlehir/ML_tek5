@@ -1,0 +1,9 @@
+mv polyno/polyomial_regression_std_10_0_degree_02_n_train_40.pdf ./
+mv polyno/polyomial_regression_std_10_0_degree_20_n_train_40.pdf ./
+mv polyno/polyomial_regression_std_10_0_degree_39_n_train_40.pdf ./
+mv polyno/polynomial_regression_standard_deviation_10_n_train_40.pdf ./
+mv polyno/polyomial_regression_std_1_0_degree_39_n_train_40.pdf ./
+mv polyno/polynomial_regression_standard_deviation_1_0_n_train_40.pdf ./
+mv polyno/polyomial_regression_std_0_0_degree_39_n_train_40.pdf ./
+mv polyno/polynomial_regression_standard_deviation_0_0_n_train_40.pdf ./
+mv polyno/polyomial_regression_std_20_0_degree_16_n_train_268.pdf ./
