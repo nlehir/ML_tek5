@@ -38,6 +38,9 @@ def objective(trial):
 
     Fix this function by using the optuna API.
     https://optuna.org/
+
+    To run the dashboard, run
+    uv run optuna-dashboard sqlite:///ridge.db
     """
     return 1
 
