@@ -1,0 +1,16 @@
+// Settings for basedpyright (the Python language server used in neovim).
+// This file is JSONC: JSON with comments, which Pyright accepts.
+{
+  // Folder that contains the virtual environment (here: the project root)...
+  "venvPath": ".",
+  // ...and its name, so imports like torch resolve to the packages in .venv/.
+  "venv": ".venv",
+  // Python version used to check the code; matches .python-version.
+  "pythonVersion": "3.10",
+  // How strict the type checks are: off, basic, standard, strict...
+  "typeCheckingMode": "basic",
+  // Extra import root: the scripts in my_models/ do `from src... import`,
+  // which works at runtime because Python adds the script's folder to the path.
+  "extraPaths": ["my_models"],
+  "include": ["my_models"]
+}
