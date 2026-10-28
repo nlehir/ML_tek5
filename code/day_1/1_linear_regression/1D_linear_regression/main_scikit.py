@@ -5,9 +5,8 @@ OLS with scikit
 import os
 
 import numpy as np
-from sklearn.linear_model import LinearRegression
-
 from constants import STD_NOISE
+from sklearn.linear_model import LinearRegression
 from utils_files import load_data
 
 
