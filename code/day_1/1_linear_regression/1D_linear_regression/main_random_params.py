@@ -5,17 +5,14 @@ Evaluate the quality of randomly drawn parameters for a
 The function empirical_risk() must be completed in utils.py
 """
 
-import os
-
 import numpy as np
 
 # from utils_solution import empirical_risk
 from constants import STD_NOISE
+from mse import mse
+from termcolor import colored
 from utils import empirical_risk
 from utils_files import load_data
-from termcolor import colored
-
-from mse import mse
 
 
 def main() -> None:
