@@ -8,7 +8,7 @@ from utils_files import clean_filename
 
 
 def main():
-    print(f"Create dataset witd {STD_NOISE} standard deviation, {N_SAMPLES} samples")
+    print(f"Create dataset with {STD_NOISE} standard deviation, {N_SAMPLES} samples")
 
     rng = np.random.default_rng()
 
