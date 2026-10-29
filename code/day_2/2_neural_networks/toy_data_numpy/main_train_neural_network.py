@@ -2,7 +2,6 @@
 In this script a neural network tries to fit some manually generated data
 """
 
-# import plot_net
 import os
 
 import matplotlib.pyplot as plt
