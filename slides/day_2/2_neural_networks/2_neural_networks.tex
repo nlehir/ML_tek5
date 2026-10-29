@@ -555,10 +555,9 @@ What is $A^n$ ?
 
 \begin{frame}{Other cost functions}
    \begin{itemize}
-       \item Until now we used the squared error cost function
-       \item The slowdown problem
-       \item The Cross entropy is another possible cost function used
-           for classification
+       \item Until now we used the squared error cost function, but other cost functions also exist (especially for classification)
+       \item The slowdown / vanishing gradient problem
+       \item The Cross entropy is another possible cost function used for classification
    \end{itemize} 
 \end{frame}
 
@@ -637,20 +636,19 @@ What is $A^n$ ?
 \end{frame}
 
 \begin{frame}{}
+   In \textbf{day\textunderscore 2/2\textunderscore neural\textunderscore networks/overparametrization/}, we train neural networks in the overparametrized and in the underparametrized regime, this time using \textbf{torch}.
     \begin{figure}[htpb]
         \centering
         \includegraphics[width=0.8\textwidth]{learning_rates_underparametrized}
     \end{figure}
-
 \end{frame}
 
 \begin{frame}{}
+    In the overparametrized regime, the SGD does not oscillate as much !
     \begin{figure}[htpb]
         \centering
         \includegraphics[width=0.8\textwidth]{learning_rates_overparametrized}
     \end{figure}
-
-
 \end{frame}
 
 \begin{frame}{Double-descent phenomenon and overfitting}
@@ -662,6 +660,36 @@ What is $A^n$ ?
 
     \url{https://arxiv.org/pdf/1812.11118.pdf} 
 
+\end{frame}
+
+\section{Speed and profiling}%
+\label{sec:jj}
+
+
+\begin{frame}
+    \frametitle{Profiling}
+
+    \url{https://ui.perfetto.dev/} (profile obtained with \textbf{torch.profiler}). Profiling code running on GPUs has some specificities, compared to CPUs (using only cProfile is not enough).
+
+    \begin{figure}
+        \begin{center}
+            \includegraphics[width=0.8\textwidth]{perfetto}
+        \end{center}
+        \caption{Profile of a \textbf{trace} obtained with the torch profilers.}\label{fig:}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Transfers}
+    Transfers (or synchronisations) between CPU and GPU are a common cause of slowness:
+    \begin{itemize}
+        \item avoid using standard python functions called on tensors (tensor.sum() instead of sum(tensor))
+        \item tensor.item(), tensor.cpu(), tensor.tolist() (sometimes used in console output)
+        
+        \item there are tools to look for GPU / CPU syncs in a code (for instance \textbf{torch.cuda.set\textunderscore sync\textunderscore debug\textunderscore mode("warn")})
+    \end{itemize}
+
+    For the project, you are encouraged to explore torch profilers and to create such visualizations and analysis.
 \end{frame}
 
 
