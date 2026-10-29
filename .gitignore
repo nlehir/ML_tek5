@@ -29,7 +29,7 @@ code/.local/*
 code/__pycache__/*
 code/.bash_history
 
-code/**/*solution*
+# code/**/*solution*
 code/day_*/**/*.pdf
 
 # Day 1
