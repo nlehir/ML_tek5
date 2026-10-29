@@ -54,3 +54,5 @@ code/day_5/3_nn_simplicity_bias/utils_solution.py
 
 todo.txt
 slides/Figures/polyno/
+
+code/day_2/2_neural_networks/mnist/trained_model.keras
