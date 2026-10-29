@@ -82,10 +82,16 @@ Introduction des problématiques liées au ML et  des trois principaux  paradigm
 
 Notion d'entrainement (apprentissage de paramètres), de risque empirique et de surapprentissage. Illustration sur des exemples et discussion sur l'origine du problème: le nombre de données disponibles est fini. Présentation de la régression linéaire et de la régression polynomiale pour illustrer le problème.
 
+
+\subsubsection{Régularisation, hyperparamètres, régression Ridge}%
+\label{ssub:regularisation}
+
+Souvent, l'apprentissage est modifié afin de contraindre certaines propriétés du modèle obtenu (réduction du surapprentissage, sparsité). Exemple avec la régression Ridge et l'équivalent en réseaux de neurones (weight decay). Introduction de la régression Ridge et de la notion d'hyperparamètre, avec utilisation de la librairie optuna. 
+
 % \subsection{Jour 1 après-midi}%
 % \label{sec:Jour 1 pm}
 %
-% \begin{table}[h!]
+% \begin{table}[]
 % \hspace*{-2cm}
 % \begin{tabular}{|l|l|}
 %    \hline
@@ -142,43 +148,7 @@ Les algorithmes d'optimisation par descente de gradient sont omniprésents en ML
 \subsubsection{Réseaux de neurones}%
 \label{ssub:}
 
-Les réseaux de neurones sont depuis une vingtaine d'années les types d'estimateurs les plus performants pour de nombreux problèmes ML en haute dimension (vision artificielle, NLP, LLMs). Présentation des NN, entrainement de NN simples et exemple d'un réseau deep learning sur MNIST.
-
-Notion de profiling et exemple avec perfetto.
-
-A confirmer: introduction aux réseaux récurrents, aux transformers et LLM.
-
-\subsubsection{Régularisation}%
-
-Souvent, l'apprentissage est modifié afin de contraindre certaines propriétés du modèle obtenu (réduction du surapprentissage, sparsité). Exemple avec la régression Ridge et l'équivalent en réseaux de neurones (weight decay).
-
-% \subsection{Jour 2 après-midi}%
-% \subsection{Jour 2 après-midi}%
-% \label{sec:Jour 2 pm}
-
-% \begin{table}[h!]
-% \centering
-% \begin{tabular}{|l|l|}
-%    \hline
-%      Nombre d'heures & chapitre \\
-%    \hline
-%     1.5  &   Estimation de densité\\
-%    \hline
-%     1  & Scoring   \\
-%    \hline
-%     1.5  & Follow-up projet + travaux pratiques   \\
-%    \hline
-% \end{tabular}
-%   \caption{Jour 2 après-midi}
-%     \label{tab:sometab}
-% \end{table}
-
-
-% \subsubsection{Estimation de densité}%
-% \label{ssub:}
-%
-% L'esimation de densité consiste en le calcul d'une distribution représentant les données. Cette distribution peut servir à l'analyse générale des données, mais aussi à l'échantillonage de données similaires au dataset.
-% Utilisation de mélanges de gaussiennes.
+Les réseaux de neurones sont depuis une vingtaine d'années les types d'estimateurs les plus performants pour de nombreux problèmes ML en haute dimension (vision artificielle, NLP, LLMs). Présentation des NN, entrainement de NN simples et exemple d'un réseau deep learning sur MNIST. Notions de régimes "underparametrized" et "overparametrized". Notion de profiling et exemple avec perfetto.
 
 \subsubsection{Scoring}%
 \label{ssub:}
