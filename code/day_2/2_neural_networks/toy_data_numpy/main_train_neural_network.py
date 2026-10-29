@@ -41,11 +41,11 @@ def train_neural_net(
 
     # we will store the loss as a function of the
     # iteration
-    MSE_train_list = list()
-    R2_train_list = list()
-    MSE_test_list = list()
-    R2_test_list = list()
-    iterations = list()
+    MSE_train_list = []
+    R2_train_list = []
+    MSE_test_list = []
+    R2_test_list = []
+    iterations = []
     for iteration in range(NB_ITERATIONS):
         # forward pass
         # Prediction of the network for a given input x
