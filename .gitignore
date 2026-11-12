@@ -41,7 +41,7 @@ code/day_2/2_neural_networks/mnist/data/*.npy
 code/day_2/2_neural_networks/toy_data_numpy/with_autograd.py
 
 code/day_3/logistic_regression/**/*solution*
-code/day_3/logistic_regression/*solutions*
+code/day_3/clustering/**/*solution*
 
 # Day 4
 code/day_4/3_feature_selection/*.pkz
