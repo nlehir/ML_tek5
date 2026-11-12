@@ -29,25 +29,26 @@ code/.local/*
 code/__pycache__/*
 code/.bash_history
 
-# code/**/*solution*
-code/day_*/**/*.pdf
+# don't push any pdf
+code/**/*.pdf
 
 # Day 1
 code/day_1/1_linear_regression/**/*.npy
 
 # Day 2
-code/day_2/3_metrics/hybrid_data/images/*_*
 code/day_2/2_neural_networks/mnist/data/*.npy
 code/day_2/2_neural_networks/toy_data_numpy/with_autograd.py
 
-code/day_3/logistic_regression/**/*solution*
-code/day_3/clustering/**/*solution*
+# Day 3
+code/day_3/**/*solution*
 
 # Day 4
-code/day_4/3_feature_selection/*.pkz
+code/day_4/**/*solution*
+code/day_4/**/*pkz
 code/day_4/3_feature_selection/vocabularies/*.txt
 
 # Day 5
+code/day_5/**/*solution*
 code/day_5/1_cart/fish/images/**/fish*
 code/day_5/3_nn_simplicity_bias/arch/
 code/day_5/3_nn_simplicity_bias/gendata.py
