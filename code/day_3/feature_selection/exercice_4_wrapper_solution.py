@@ -32,16 +32,6 @@ if __name__ == "__main__":
     y_test = testdata.target
     vocabulary = np.array(vectorizer.get_feature_names_out())
 
-    utils.save_cache(
-        cache_name,
-        {
-            "X_train": X_train,
-            "y_train": y_train,
-            "X_test": X_test,
-            "y_test": y_test,
-            "vocabulary": vocabulary,
-        },
-    )
     print(f"Original vocabulary size : {len(vocabulary)}")
 
     classifier = Pipeline(
@@ -59,6 +49,11 @@ if __name__ == "__main__":
 
     acc_train = selector.score(X_train, y_train)
     acc_test = selector.score(X_test, y_test)
+    scores = cross_val_score(
+        selector, X_train, y_train, cv=5, n_jobs=NUM_JOBS, verbose=1
+    )
+
+    print(f"Cross validated accuracy: {scores.mean():.2f} (+/- {scores.std():.2f})")
     print(f"train accuracy : {acc_train:.2f}")
     print(f"test accuracy : {acc_test:.2f}")
 
@@ -85,8 +80,3 @@ if __name__ == "__main__":
             )
         )
 
-    print("Cross validation")
-    scores = cross_val_score(
-        selector, X_train, y_train, cv=5, n_jobs=NUM_JOBS, verbose=1
-    )
-    print(f"Cross validated accuracy: {scores.mean():.2f} (+/- {scores.std():.2f})")
