@@ -21,6 +21,16 @@ with uv and installing from requirements.txt.
 
 <https://docs.astral.sh/uv/guides/projects/>
 
+#### recommended: pin python version
+
+In order to have a consistent python version, use:
+
+* uv python pin 3.13
+
+* uv sync
+
+If a .venv was previously created, delete it before the uv sync.
+
 ### pip
 
 Classic python package manager.
