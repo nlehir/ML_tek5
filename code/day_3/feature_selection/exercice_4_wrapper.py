@@ -13,7 +13,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import cross_val_score
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import MaxAbsScaler
-from utils_data_processing import LinearPipeline, preprocess_imdb
+from utils_data_processing import preprocess_imdb
 
 if __name__ == "__main__":
     traindata, _, testdata = preprocess_imdb(num_jobs=NUM_JOBS)

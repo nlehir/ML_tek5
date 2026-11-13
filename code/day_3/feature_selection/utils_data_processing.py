@@ -5,7 +5,6 @@ import fetch_dataset_stanford_sentiment
 import utils
 from joblib import Parallel, delayed
 from matplotlib.cbook import _unmultiplied_rgba8888_to_premultiplied_argb32
-from sklearn.base import BaseEstimator
 from sklearn.feature_selection._base import SelectorMixin
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
@@ -95,23 +94,3 @@ def preprocess_imdb(num_jobs=-1) -> tuple[list]:
         )
 
     return traindata, unsupdata, testdata
-
-
-class LinearPipeline(BaseEstimator):
-    def __init__(self, pipeline, clf_key):
-        super().__init__()
-        self.pipeline = pipeline
-        self.clf_key = clf_key
-
-    def fit(self, X, y=None):
-        return self.pipeline.fit(X, y)
-
-    def transform(self, X):
-        return self.pipeline.transform(X)
-
-    def score(self, X, y):
-        return self.pipeline.score(X, y)
-
-    @property
-    def coef_(self):
-        return self.pipeline.named_steps[self.clf_key].coef_
