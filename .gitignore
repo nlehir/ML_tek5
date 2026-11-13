@@ -40,8 +40,8 @@ code/day_2/2_neural_networks/mnist/data/*.npy
 
 # Day 3
 code/day_3/**/*pkz
-code/day_3/logistic_regression/**/*solution*
-code/day_3/feature_selection/**/*solution*
+# code/day_3/logistic_regression/**/*solution*
+# code/day_3/feature_selection/**/*solution*
 code/day_3/feature_selection/**/*.txt
 
 # Day 4
