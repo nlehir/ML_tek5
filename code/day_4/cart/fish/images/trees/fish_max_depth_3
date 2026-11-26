@@ -1,0 +1,33 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname=helvetica] ;
+edge [fontname=helvetica] ;
+0 [label="weight <= 8.244\nentropy = 1.0\nsamples = 800\nvalue = [400, 400]\nclass = tuna", fillcolor="#ffffff"] ;
+1 [label="weight <= 5.798\nentropy = 0.994\nsamples = 686\nvalue = [313, 373]\nclass = salmon", fillcolor="#dfeffb"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="weight <= 4.603\nentropy = 0.839\nsamples = 123\nvalue = [90, 33]\nclass = tuna", fillcolor="#efaf82"] ;
+1 -> 2 ;
+3 [label="entropy = 0.0\nsamples = 21\nvalue = [21, 0]\nclass = tuna", fillcolor="#e58139"] ;
+2 -> 3 ;
+4 [label="entropy = 0.908\nsamples = 102\nvalue = [69, 33]\nclass = tuna", fillcolor="#f1bd98"] ;
+2 -> 4 ;
+5 [label="weight <= 5.811\nentropy = 0.969\nsamples = 563\nvalue = [223, 340]\nclass = salmon", fillcolor="#bbddf6"] ;
+1 -> 5 ;
+6 [label="entropy = 0.0\nsamples = 4\nvalue = [0, 4]\nclass = salmon", fillcolor="#399de5"] ;
+5 -> 6 ;
+7 [label="entropy = 0.97\nsamples = 559\nvalue = [223, 336]\nclass = salmon", fillcolor="#bcdef6"] ;
+5 -> 7 ;
+8 [label="length <= 39.453\nentropy = 0.79\nsamples = 114\nvalue = [87, 27]\nclass = tuna", fillcolor="#eda876"] ;
+0 -> 8 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+9 [label="weight <= 8.394\nentropy = 0.996\nsamples = 26\nvalue = [14, 12]\nclass = tuna", fillcolor="#fbede3"] ;
+8 -> 9 ;
+10 [label="entropy = 0.0\nsamples = 4\nvalue = [4, 0]\nclass = tuna", fillcolor="#e58139"] ;
+9 -> 10 ;
+11 [label="entropy = 0.994\nsamples = 22\nvalue = [10, 12]\nclass = salmon", fillcolor="#deeffb"] ;
+9 -> 11 ;
+12 [label="weight <= 8.975\nentropy = 0.659\nsamples = 88\nvalue = [73, 15]\nclass = tuna", fillcolor="#ea9b62"] ;
+8 -> 12 ;
+13 [label="entropy = 0.84\nsamples = 52\nvalue = [38, 14]\nclass = tuna", fillcolor="#efaf82"] ;
+12 -> 13 ;
+14 [label="entropy = 0.183\nsamples = 36\nvalue = [35, 1]\nclass = tuna", fillcolor="#e6853f"] ;
+12 -> 14 ;
+}
