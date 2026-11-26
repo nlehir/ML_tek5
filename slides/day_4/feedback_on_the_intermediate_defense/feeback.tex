@@ -1,0 +1,120 @@
+\documentclass[usenames,dvipsnames,french]{beamer}
+
+\mode<presentation> {
+
+\usetheme{Montpellier}
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage[frenchb]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+% \usepackage[demo]{graphicx}
+% \usepackage{caption}
+
+\usepackage{subcaption}
+% \usepackage{subfig}
+% \usepackage{algorithm,algorithmic}
+\usepackage{algorithm2e}
+\usepackage{listings}
+% \usepackage{ntheorem}
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\setcounter{tocdepth}{2}
+\graphicspath{{../../Figures/}}
+
+
+% exercices comptés
+\newcounter{numexos}%Création d'un compteur qui s'appelle numexos
+\setcounter{numexos}{0}%initialisation du compteur
+\newcommand{\exercice}[1]{%Création d'une macro ayant un paramètre
+\addtocounter{numexos}{1}%chaque fois que cette macro est appelée, elle ajoute 1 au compteur numexos
+\textcolor{DarkOrchid}{Exercice\,\thenumexos\,:}\,#1%Met en rouge Exercice et la valeur du compteur appelée par \thenumeexos
+}
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\setbeamertemplate{title page}{
+    \centering
+
+    \Large\bfseries
+    Machine learning Tek 5: Feedback on the intermediate defense
+    
+
+    }
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+    \frametitle{General remarks}
+
+    \begin{itemize}
+        \item Pay attention to the suggested durations for each task during the defense.
+        
+        \item Stay technical
+        
+        \item If you present the context, the dataset, or the task: be very concise. Spend more energy and time on the methods, the techniques and the results.
+        
+        \item Be quantitative about the performance of models using relevant machine learning \textbf{scores}.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Task 2.1 (General ML knowledge)}
+    Each student of the group should speak for at least 1 question
+\end{frame}
+
+\begin{frame}
+    \frametitle{Task 2.2 (MNIST)}
+    \begin{itemize}
+        \item If you have the time, you can redo you study using $0.98$ or $0.99$ as a threshold instead of $0.97$.
+        
+        \item Be intentional about the part of the pipeline that you study: data loading, training time, or inference time. They are all important and interesting. In this exercise, the one part to prioritize is \textbf{training time}.
+        
+        \item Learning rate \textbf{schedulers} can be a good aspect to study.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Task 2.3}
+    \begin{itemize}
+        \item The exercise is not the easiest one, do the best you can !
+        
+        \item Make sound examples.
+        
+        \item In tasks 2.3.2, we are \textbf{not} expecting a good performance !
+
+        
+        \item Use larger datasets than the one fetched by default. This one is just an example to verify that the pipeline works.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Task 2.4}
+    \begin{itemize}
+        \item Be quantitative about the compression amount and inference time reduction.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Task 2.5}
+    \begin{itemize}
+        \item Don't forget to discuss and compare the various estimators explored, as mentioned in the project description.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Task 2.6}
+    \begin{itemize}
+        \item On this dataset, a dimensionality reduction step can help, before the clustering. However, not all dimensionality reduction methods work well.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Evaluation}
+    The evaluation grid contains many technical notions. The various tasks allow you to demonstrate your understanding of these notions and to showcase your understanding of machine learning and the culture you have aquired. 
+
+    Use a precise, technical machine learning vocabulary, similar to the one used during the class.
+\end{frame}
+
+\end{document} 
