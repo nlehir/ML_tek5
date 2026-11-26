@@ -1,0 +1,3 @@
+SIGMA = 0.03
+M_TARGET = 5
+N_SAMPLES = 60
