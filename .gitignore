@@ -54,8 +54,10 @@ code/day_4/cart/fish/images/overfitting/*.pdf
 code/day_4/cart/fish/fish_test_overfitting.py
 code/day_4/cart/fish/fish_parallel.py
 code/day_4/cart/fish/main_learn_tree_fish.py
-code/day_4/reinforcement_learning/
-code/day_4/nn_simplicity_bias/
+# code/day_4/reinforcement_learning/
+code/day_4/nn_simplicity_bias/arch
+code/day_4/nn_simplicity_bias/images/*.pdf
+code/day_4/nn_simplicity_bias/images/polynomial_regression/*.pdf
 code/day_4/density_estimation/
 
 todo.txt
