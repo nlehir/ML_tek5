@@ -4,6 +4,10 @@ import matplotlib.pyplot as plt
 from sklearn.datasets import load_digits
 from sklearn.decomposition import PCA
 
+def clean_filename(name):
+    name = name.replace(" ", "_")
+    return name
+
 
 def main() -> None:
     digits = load_digits()
@@ -41,7 +45,14 @@ def main() -> None:
     fig_name = "projected_digits.pdf"
     fig_path = os.path.join("images", fig_name)
     plt.savefig(fig_path)
+    plt.close()
 
+    for component_index in range(2):
+        title = f"principal component {component_index}"
+        fig_path = os.path.join("images", clean_filename(title))
+        plt.imshow(pca.components_[component_index].reshape(8, 8))
+        plt.title(title + "\nin the canonical basis")
+        plt.savefig(fig_path)
 
 if __name__ == "__main__":
     main()
