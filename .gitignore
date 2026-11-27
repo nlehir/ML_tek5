@@ -45,9 +45,9 @@ code/day_3/**/*pkz
 code/day_3/feature_selection/**/*.txt
 
 # Day 4
-code/day_4/pca/**/*solution*
+# code/day_4/pca/**/*solution*
 # code/day_4/cart/
-code/day_4/cart/**/*solution*
+# code/day_4/cart/**/*solution*
 code/day_4/cart/fish/images/overfitting/depth/fish*
 code/day_4/cart/fish/images/overfitting/min_samples/fish*
 code/day_4/cart/fish/images/overfitting/*.pdf
